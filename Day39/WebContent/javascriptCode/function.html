@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    
+    <button onclick="test1()" type="button">함수1</button>
+    <button onclick="test2('매개변수전달')" type="button">함수2</button>
+    <button onclick="test3('이게','되나')" type="button">함수3</button>
+    <br><br>
+    <p>값을 입력 후 아래 버튼을 눌러주세요.</p>
+    값 : <input type="text" id="text1">
+    <button type="button" onclick="test4();">리턴 확인</button>
+    
+    <script>
+        /* 선언적 함수  -> 만든 함수를 메모리에 바로 올려놓고 사용함(선언 위치가 상관없음) */
+        // 1. 매개변수도 없고, 인자값도 없는 함수
+        function test1(){
+            alert("버튼 클릭함!");
+        };
+        
+        
+//        function test1(){
+//            alert("버튼 클릭함!");
+//        }();
+        
+//        (function test1(){
+//            alert("버튼 클릭함!");
+//        })();
+
+        
+        // 2. 매개변수도 있고, 인자값도 있는 함수
+        function test2(data){
+            alert(data);
+            (test1)();      // 이게되네.. -> 인터프리터 방식이라 사용가능
+            //(test1())();  // 되긴한데 오류문 발생
+        }
+        
+        // 3. 매개변수는 없지만, 인자값은 있는 함수
+        // -> arguments라는 내부 객체가 있어서 이런 형태가 가능하다고 함.
+        function test3(){
+            for(var i=0; i<arguments.length; i++){
+                alert(arguments[i]);
+            }
+        }
+        
+        // 4. 리턴 처리
+        function test4(){
+            var data = test5();
+            alert(data);
+        }
+        function test5(){
+            var data = document.getElementById("text1").value;
+            return data;
+        }
+        
+        /*
+        익명 함수
+        -> 변수에 함수를 담아서 작성
+        -> 함수 선언 이후 사용이 가능
+        -> 변수에 담지 않는 경우 호출없이 스스로 동작하는 함수, 스스로 동작하기 때문에 리턴을 할 수는 없음.
+        */
+        var test = function(){
+            alert("익명함수입니다.");
+        }();
+        
+        // 이 함수는 이름이 없어서 페이지 로드할 때 처음 한번만 실행되고 더이상 실행되지 않는다.
+        // () 는 함수를 실행한다는 의미 -> 인터프리터 방식에서만 사용가능
+        // 생성자처럼 사용하는거 같은데
+        (function(){
+            alert("자동으로 호출되는 함수");
+        })();
+    </script>
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    <h2>escape/unescape</h2>
+    <button onclick="original();">원본</button><br>
+    <button onclick="escapeTest();">escape</button><br>
+    <button onclick="unescapeTest();">unescape</button><br>
+    
+    <script>
+        function original(){
+            var str = "http://www.naver.com?name=안녕";
+            alert(str);
+        }
+        function escapeTest(){
+            var str = "http://www.naver.com?name=안녕";
+            str = escape(str);
+            alert(str);
+        }
+        function unescapeTest(){
+            var str = "http://www.naver.com?name=안녕";
+            str = escape(str);
+            str = unescape(str);
+            alert(str);
+        }
+    </script>
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    <h2>escape/unescape</h2>
+    <button onclick="original();">원본</button><br>
+    <button onclick="encodeURITest();">encodeURI</button><br>
+    <button onclick="decodeURITest();">decodeURI</button><br>
+    <button onclick="encodeURIComponentTest();">encodeURIComponent</button><br>
+    
+    <script>
+        function original(){
+            var str = "http://www.naver.com?name=안녕";
+            alert(str);
+        }
+        function encodeURITest(){
+            var str = "http://www.naver.com?name=안녕";
+            str = encodeURI(str);
+            alert(str);
+        }
+        function decodeURITest(){
+            var str = "http://www.naver.com?name=안녕";
+            str = encodeURI(str);
+            str = decodeURI(str);
+            alert(str);
+        }
+        function encodeURIComponentTest(){
+            var str = "http://www.naver.com?name=안녕";
+            str = encodeURIComponent(str);
+            alert(str);
+        }
+    </script>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    첫번째 수 : <input type="text" id="number1"><br>
+    두번째 수 : <input type="text" id="number2"><br>
+    <button onclick="check();" type="button">숫자 체크</button>
+    <button onclick="sum();" type="button">결과 보기</button>
+    <p id="p1" style="border:3px solid red; height: 300px; width:500px;"></p> 
+    
+    <script>
+        function sum(){
+            var str="";
+            str += "document.getElementById('number1').value + '+'+";
+            str += "document.getElementById('number2').value + '='+";
+            str += "(parseInt(document.getElementById('number1').value)+";
+            str += "parseInt(document.getElementById('number2').value))";
+            
+            document.getElementById("p1").innerHTML = eval(str);
+        }
+        
+        function check(){
+            var num1 = document.getElementById("number1").value;
+            var num2 = document.getElementById("number2").value;
+            var result = document.getElementById("p1");
+            if(isFinite(num1) && isFinite(num2)){
+                result.innerHTML = parseInt(num1) + parseInt(num2);
+            }else if(isNaN(num1) || isNaN(num2)){
+                result.innerHTML = "숫자가 아닙니다.";
+            }
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <style>
+        ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        li {
+            /*            border: 1px solid black;*/
+
+            display: block;
+            box-sizing: border-box;
+            font-weight: bold;
+            width: 200px;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 20px;
+            background-color: transparent;
+        }
+
+        button {
+            border: 0px;
+            background-color: transparent;
+            float: right;
+            margin-top: 8px;
+        }
+
+        .menu>li {
+            font-size: 18px;
+        }
+
+        .menu>li:hover {
+            background-color: #675c7c;
+            color: #ffffff;
+        }
+        
+        .sub>li{
+            font-size: 15px;
+            padding-left: 40px;
+        }
+        
+        .sub>li:hover{
+            background-color: #d3c99c;
+            color: rgba(0,0,0,0.5);
+        }
+        
+        .subsub>li{
+            font-size: 13px;
+            color: gainsboro;
+            padding-left: 60px;
+        }
+        
+        .subsub>li:hover{
+            background-color: #d3ceb8;
+            color: rgba(0,0,0,0.3);
+        }
+        
+        
+    </style>
+
+    <script>
+        $(function() {
+            $(".menu>ul").hide();
+            $(".sub>ul").hide();
+
+
+            
+            $(".click").click(function() {                
+                if($(this).children().text()=="+"){
+                    $(this).children().text("-");
+                }else{
+                    $(this).children().text("+");
+                }
+                
+                $(this).next().toggle();
+
+
+            });
+
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <ul class="menu">
+        <li>Home</li>
+
+        <li class="click">JavaScript<button>+</button></li>
+        <ul class="sub">
+            <li>Cookies</li>
+            <li>Events</li>
+            <li>Forms</li>
+            <li>Games</li>
+            <li>Images</li>
+            <li class="click">Navigations<button>+</button></li>
+            <ul class="subsub">
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>JQuery</li>
+            </ul>
+            <li>Tabs</li>
+        </ul>
+
+        <li class="click">Tutorials<button>+</button></li>
+        
+        <ul class="sub">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li class="click">Java<button>+</button></li>
+            <ul class="subsub">
+                <li>JSP</li>
+                <li>JSF</li>
+                <li>JPA</li>
+                <li>Contact</li>
+            </ul>
+            <li>Tabs</li>
+        </ul>
+        
+        <li>Contact</li>
+        <li>Upload script</li>
+    </ul>
+
+</body></html>

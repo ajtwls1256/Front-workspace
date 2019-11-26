@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    
+    <h1 id="html"><span>Test1</span>Test2</h1>
+    <button id="btn10">html()</button>
+    <button id="btn11">text()</button>
+    <div id="htmlTest"></div>
+    <script>
+        $(function(){
+            $("#btn10").click(function(){
+//                alert($("#html").html());   // <span data-brackets-id="167">Test1</span>Test2
+                $("#htmlTest").html("<h1>HTML메소드</h1>");    // <h1>태그가 적용된 HTML메소드 출력
+            });
+            $("#btn11").click(function(){
+//                alert($("#html").text());   // Test1Test2
+                $("#htmlTest").text("<h1>HTML메소드</h1>");    // 텍스트로 치기때문에 <h1></h1> 도 텍스트로 출력됨
+            });
+        });
+    </script>
+    
+    
+    
+    
+    <br><hr><br>
+    
+        
+    <script>
+        $(function(){
+            $("#removeTest").css("border","2px solid red");
+            
+            $("#btn12").click(function(){
+                $("#removeTest").children().first().remove();   // 자신을 제거
+            });
+            $("#btn13").click(function(){
+                $("#removeTest").empty();   // 자신을 제외한 후손들을 전부제거
+            });
+        })
+    </script>
+    
+    <div id="removeTest">
+        <h1>Test1<h2>1</h2><h2>2</h2></h1>
+        <h1>Test2</h1>
+    </div>
+    <button id="btn12">특정객체 제거</button>
+    <button id="btn13">후손객체 모두 제거</button>
+
+
+    
+    
+    
+        
+    <br><hr><br>
+    
+    
+    
+    <script>
+        $(function(){
+            $("#btn14").click(function(){
+                $("<span>추가메세지</span>").appendTo("#p1");    // 자식 중에 뒤에
+            });
+            
+            $("#btn15").click(function(){
+                $("<span>추가메세지</span>").prependTo("#p2");   // 자식 중에 앞에
+            });
+            
+            $("#btn16").click(function(){
+                $("<span>추가메세지</span>").insertAfter("#p3"); // 형제로 뒤에
+            });
+            
+            $("#btn17").click(function(){
+                $("<span>추가메세지</span>").insertBefore("#p4");    // 형제로 앞에
+            });
+        });
+    </script>
+    
+    
+    <div id="appendTest">
+        <p id="p1">Test1</p>
+        <p id="p2">Test2</p>
+        <p id="p3">Test3</p>
+        <p id="p4">Test4</p>
+    </div>
+    <button id="btn14">appendTo</button>
+    <button id="btn15">prependTo</button>
+    <button id="btn16">insertAfter</button>
+    <button id="btn17">insertBefore</button>
+    
+    
+    
+    <script>
+        $(function(){
+            
+            $("#btn18").click(function(){
+//                $("#append").prepend($("#append>h2"));
+//                $("#append").append($("#append>h1").clone());
+            });
+        });
+        
+    </script>
+    
+    
+    <div id="append">
+        <h1>Test1</h1>
+        <h2>Test2</h2>
+    </div>
+    <button id="btn18">append테스트</button>
+            
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</body></html>

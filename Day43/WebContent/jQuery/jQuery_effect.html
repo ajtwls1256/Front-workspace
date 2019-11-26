@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+
+    <p id="p1">Hide/Show Test</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <script>
+        $(function() {
+            $("#hide").click(function() {
+                $("#p1").hide(1000); // #p1 1초 안에 없어지고 
+            });
+
+            $("#show").click(function() {
+                $("#p1").show(1000); // #p1 1초 안에 생기고
+            });
+
+            $("#toggle").click(function() {
+                $("#p1").toggle(1000); // hide, show 반복
+            });
+
+            $("#fadeIn").click(function() {
+                $("#p1").fadeIn(1000); // 선명해지면서 보임   
+            });
+
+            $("#fadeOut").click(function() {
+                $("#p1").fadeOut(1000); // 흐려지면서 사라짐   
+            });
+        });
+    </script>
+
+
+
+    <br>
+    <hr><br>
+
+
+
+    <style>
+        .animation {
+            width: 50px;
+            height: 50px;
+            background-color: orangered;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#div1").animate({
+                    height:'300px',
+                    width:'300px',
+                    opacity:'0.4'
+                });
+            });
+            
+            $("#btn2").click(function(){
+                $("#div1").animate({
+                    height:'50px',
+                    width:'50px',
+                    opacity:'1.0'
+                });
+            });
+        });
+    </script>
+    
+    <div id="div1" class="animation"></div>
+    <button id="btn1">확대</button>
+    <button id="btn2">축소</button>
+
+
+
+
+    <br>
+    <hr><br>
+    
+    
+    <style>
+        .move{
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            position: relative;
+        }
+    </style>
+    
+    <script>
+        $(function(){
+            $("#move").click(function(){
+                $(".move").each(function(index){
+                    $(this).delay(index*100).animate({left:500}, 'slow');
+                });
+            });
+            
+            
+            $("#return").click(function(){
+                $(".move").each(function(index){
+                    $(this).delay(index*100).animate({left:0}, 'slow');
+                });
+            });
+            
+        });
+    </script>
+    
+    
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <button id="move">오른쪽으로 이동</button>
+    <button id="return">원상태로</button>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+</body></html>

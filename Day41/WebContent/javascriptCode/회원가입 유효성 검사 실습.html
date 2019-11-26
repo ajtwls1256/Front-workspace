@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+    
+<style>
+    fieldset{
+        height:400px;
+        width:400px;
+    }
+</style>
+        문제<br>
+    회원가입시 각 필드마다 유효성 검사를 하여 처리 할 수 있도록 만들어라. <br>
+    1. ID는 영어소문자,숫자만 가능해야함(4~12자리,소문자로 시작해야함) <br>
+    2. PW는 영어소문자,대문자,숫자만 입력 가능해야 하고 (최소 8~12자리) <br>
+    3. PW와 PW_re는 같아야 함<br>
+    4. NAME은 무조건 한글만 가능해야 함(최소1글자 이상)<br>
+    5. 주소에는 영어 사용 불가(공백 불가)<br>
+    6. 우편번호는 무조건 숫자만 입력 가능해야 함<br>
+    7. 이메일은 @가 포함 되어야 함(@앞에가 영문자,숫자로  4~12글자 ) <br>
+    8. 전화번호는 첫번째 필드는 010만 입력 가능 해야 함 <br>
+                두번째 필드는 3자리 이상 입력 해야 함 <br>
+                세번째 필드는 무조건 4자리 입력 해야함 <br>
+               (모두 숫자만 가능 해야함) <br>
+    
+<center>
+
+    <fieldset>
+        <legend>회원가입</legend>
+<pre>
+<span id="message" style="color:blue;"></span>
+            <form action="join" method="post">
+ID :        <input type="text" id="user_id" /><br>
+PW :        <input type="password" id="pw" /><br>
+PW_re :     <input type="password" id="pw_re" /><br>
+NAME :      <input type="text" id="user_name" /><br>
+ADDRESS :   <input type="text" id="addr" /><br>
+POST NUMBER:  <input type="text" size="5" id="post_1" /> - <input type="text" size="5" id="post_2" /> <br>
+E-MAIL :    <input type="text" id="email" /><br>
+PHONE :     <input type="text" id="tel1" size="2" maxlength="3" />-<input type="text" id="tel2" size="2" maxlength="4" />-<input type="text" id="tel3" size="2" maxlength="4" /><br>
+<input type="submit" value="회원가입" onclick="return check();"/>  <input type="reset" value="취소" />
+            </form>
+</pre>
+    </fieldset>
+</center>
+
+    
+<script>
+    function check(){
+        
+        // 쌤이 하신 방식은 초기화는 check마다 돌게하고
+        // 입력한 값이 정규식에 적합할 때의 설정을 각 상황마다 주는게 아니라 각 상황들을 else if로 연결하여 틀리면 return false하여 끝내서 맨 처음에만 초기화 시키는 방
+        
+        clear();
+        
+        
+        msg = document.getElementById("message");
+        
+        var regExp = /^[a-z][a-z0-9]{3,11}$/;
+        var id = document.getElementById("user_id");
+        
+        if(regExp.test(id.value)){
+            msg.innerHTML = "";
+            id.style.backgroundColor = "white";
+        } else{
+            msg.innerHTML = "ID는 영어소문자,숫자만 가능해야함(4~12자리,소문자로 시작해야함)";
+            id.style.backgroundColor = "red";
+            return false;
+        }
+        
+        
+        
+         
+        regExp = /^[a-zA-Z0-9]{8,12}$/;
+        var pw = document.getElementById("pw");
+        
+        if(regExp.test(pw.value)){
+            msg.innerHTML = "";
+            pw.style.backgroundColor = "white";
+        } else{
+            msg.innerHTML = "PW는 영어소문자,대문자,숫자만 입력 가능해야 함 (최소 8~12자리)";
+            pw.style.backgroundColor = "red";
+            return false;
+        }
+        
+        
+        
+      
+        
+        var pw_re = document.getElementById("pw_re");
+        
+        if(pw.value == pw_re.value){
+            msg.innerHTML = "";
+            pw_re.style.backgroundColor = "white";
+        }
+        else{
+            msg.innerHTML = "PW와 PW_re는 같아야 함";
+            pw_re.style.backgroundColor = "red";
+            return false;
+        }
+        
+  
+        
+        
+        
+        
+        regExp = /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/;
+        var user_name = document.getElementById("user_name");
+        
+        if(regExp.test(user_name.value)){
+            msg.innerHTML = "";
+            user_name.style.backgroundColor = "white";
+        } else{
+            msg.innerHTML = "NAME은 무조건 한글만 가능해야 함(최소1글자 이상)";
+            user_name.style.backgroundColor = "red";
+            return false;
+        }
+        
+        
+        
+   
+        regExp = /[a-zA-Z]/;
+        var regExp2 = / /;
+        var addr = document.getElementById("addr");
+        
+         
+        if(regExp.test(addr.value) || regExp2.test(addr.value)){
+            msg.innerHTML = "주소에는 영어 사용 불가(공백 불가)";
+            addr.style.backgroundColor = "red";
+            return false;
+        }
+        else{
+            msg.innerHTML = "";
+            addr.style.backgroundColor = "white";
+        }
+        
+        
+        
+        // 요기 하고 있었음
+        
+        var post_1 = document.getElementById("post_1");
+        var post_2 = document.getElementById("post_2");
+        regExp = /^\d.+$/;
+        
+        if(regExp.test(post_1.value) && regExp.test(post_2.value)){
+            msg.innerHTML = "";
+            user_name.style.backgroundColor = "white";
+        } else{
+            msg.innerHTML = "NAME은 무조건 한글만 가능해야 함(최소1글자 이상)";
+            user_name.style.backgroundColor = "red";
+            return false;
+        }
+        
+        
+        
+        
+        var email = document.getElementById("email");
+
+        var tel1 = document.getElementById("tel1");
+        var tel2 = document.getElementById("tel2");
+        var tel3 = document.getElementById("tel3");
+        
+        
+        
+        return false;
+    }
+    
+    
+    
+    function clear(){
+        msg.innerHTML = "";
+        var input = document.getElementsByName("input");
+        
+        for(var i=0; i<input.length; i++){
+            input[i].style.backgroundColor = "white";
+        }
+    }
+    
+</script>    
+
+</body>
+</html>
+    
+    
+    
+    
+    
+    

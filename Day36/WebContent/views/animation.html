@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+            background: yellow;
+            font-size: 20px;
+            border: 1px solid blue;
+            line-height: 100px;
+            text-align: center;
+            transition-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        #d1:hover{
+            font-size: 40px;
+            transition-duration: 2s;
+            transition-delay: 200ms;
+        }
+        #s1{
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+        @keyframes slidein{
+            from{
+                margin-left: 100%;
+                width: 300%;
+            }
+            to{
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        #d2:active{
+            animation-duration: 2s;
+            animation-name: sizeChange;
+        }
+        @keyframes sizeChange{
+            from{
+                font-size: 10px;
+            }
+            50%{
+                background-color : red;
+            }
+            to{
+                font-size: 50px;
+            }
+        }
+    </style>
+    <div id="d1">
+        TEST
+    </div>
+    <span id="s1">안녕</span>
+    <div id="d2">
+        TEST
+    </div>
+    
+    
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    
+    <style>
+        #d3{
+            margin: 100px;
+            width: 100px;
+            height: 100px
+        }
+        #d3:active{
+            animation-duration: 5s;
+            animation-direction: normal;
+            animation-name:trans1;
+        }
+        @keyframes trans1{
+            from{
+                background: green;
+                border: 1px solid black;
+            }
+            to{
+                background: yellow;
+                border-radius: 50%;
+                transform: rotate(360deg);
+                border: 3px solid red;
+            }
+        }
+        img{
+            margin-top: 100px;
+            margin-left : 100px;
+            width: 300px;
+            height: 300px;
+            animation-name: trans1;
+            animation-duration: 5s;
+            animation-direction: alternate;
+            animation-iteration-count: 5;
+        }
+    </style>
+    <div id="d3">
+    </div>
+    <img src="img/dora.png">
+    <img src="img/mball2.png">
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

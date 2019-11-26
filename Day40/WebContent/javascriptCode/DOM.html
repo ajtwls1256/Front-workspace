@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button type="button" onclick="test1()">클릭</button>
+    <button type="button" onclick="test2()">클릭2</button>
+
+    <script>
+        function test1(){
+            var h1 = document.createElement("h1");          // h1태그 생성
+            var text = document.createTextNode("Hello");    // 텍스트 노드 생성
+            h1.appendChild(text);   // 요소노드의 자식을 텍스트노드를 삽입
+            var body = document.getElementsByTagName("body");   // body태그의 요소를 가져옴
+            
+            body[0].appendChild(h1);    // body태그의 자식으로 h1태그 삽입
+        }
+        
+        function test2(){
+            /* 
+            <b>요소노드 생성
+            Hello 텍스트노드 생성
+            p1의 자식으로 삽입
+            */
+            
+            var b = document.createElement("b");
+            var text = document.createTextNode("Hello");
+            b.appendChild(text);
+            var p1 = document.getElementById("p1");
+            p1.appendChild(b);
+        }
+    </script>
+    
+    <p id="p1">Hello</p>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+
+    <div id="div1" style="border: 5px solid black; width:500px; height: 500px;"></div>
+    <button type="button" onclick="test3()">클릭3</button>
+    
+    <script>
+        function test3(){
+            var img = document.createElement("img");    // img 요소노드 생성
+            img.src="img/superball.jpg";
+            img.width="300";
+            img.height="300";
+            //img.myProperty="123"; 존재하지 않는 속성은 들어가지않음.
+            img.setAttribute("myProperty","123"); // 존재하지 않는 속성이지만 강제로 넣어야 하는 경우
+        
+            document.getElementById("div1").appendChild(img);
+        }
+    </script>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+    
+    <div id="div2" style="border: 5px solid black; width:500px; height: 500px;"></div>
+    <button type="button" onclick="test4()">클릭4</button>
+    
+    <script>
+        function test4(){
+            var div2 = document.getElementById("div2");
+            div2.style.backgroundColor = "aqua";
+            div2.style.borderRadius = "20px";
+        }
+    </script>
+    
+    
+    
+     <br><br><hr><br><br>
+    
+    
+    <div id="div3" style="border: 5px solid black; width:500px; height: 500px;"></div>
+    <button type="button" onclick="input()">객체 삽입</button>
+    <button type="button" onclick="delete1()">부모에서 삭제</button>
+    <button type="button" onclick="delete2()">해당 객체에서 삭제</button>
+    
+    <script>
+        var pObj;
+        function input(){
+            var div3 = document.getElementById("div3");
+            pObj = document.createElement("p");
+            pObj.setAttribute("id","pp");
+            pObj.style.border="5px solid red";
+            pObj.style.width = "200px";
+            pObj.style.height = "200px";
+            pObj.style.backgroundColor="pink";
+            div3.appendChild(pObj);
+        }
+        function delete1(){
+            var div3 = document.getElementById("div3");
+            div3.removeChild(pObj);
+        }
+        function delete2(){
+//            pObj.remove();
+            document.getElementById("pp").remove();
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

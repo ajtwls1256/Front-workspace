@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="div1" style="border: 3px solid black; height: 300px; width: 500px;"></div>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    
+    <script>
+        window.onload = function(){
+            var test1 = document.getElementById("btn1");
+            var test2 = document.getElementById("btn2");
+            test1.onclick = function(){
+                document.getElementById("div1").innerHTML += "test1수행 ";
+            }
+            test2.onclick = function(){
+                document.getElementById("div1").innerHTML += "test2수행 ";
+                test2.onclick = null;                   // 이벤트 취소
+            }
+        }
+    </script>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+    <div id="div2" style="border: 3px solid black; height: 300px; width: 500px;"></div>
+    <button onclick="test1();">버튼3</button>
+    <button onclick='document.getElementById("div2").innerHTML += "버튼4 클릭 완료"'>버튼4</button>
+    
+    <script>
+        function test1(){
+            document.getElementById("div2").innerHTML += "test1()함수 호출 완료";
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+    <div id="div3" style="border: 3px solid black; height: 300px; width: 500px;"></div>
+    <button id="btn3">버튼3</button>
+    
+    <script>
+        window.onload = function(){
+            var btn3 = document.getElementById("btn3");
+            btn3.addEventListener('click',function(){
+                document.getElementById("div3").innerHeight = "버튼3 클릭";
+            })
+        }
+    </script>
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+    <style>
+        .div-test{
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .div1{
+            background: red;
+        }
+        .div2{
+            background: orange;
+        }
+        .div3{
+            background: yellow;
+        }
+        .div4{
+            background: green;
+        }
+    </style>
+    
+    <script>
+        function test(e, msg){
+//            var event = e || window.event;  // 넘어오는 값이 있으면 e값을대입, 없으면 event값을 대입
+            console.log(event);
+            alert(msg);
+            event.stopPropagation();    // 이벤트 버블링 막는 함수  (ie제외)
+            
+            // ie전용설정
+            //event.cancelBubble=true;
+        }
+    </script>
+    
+    <h1>이벤트 버블링</h1>
+    <div onclick="test(event, '빨간 div')" class="div-test div1">
+        <div onclick="test(event, '주황 div')" class="div-test div2">
+            <div onclick="test(event, '노랑 div')" class="div-test div3">
+                <div onclick="test(event, '초록 div')" class="div-test div4"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+      
+    <br><br><hr><br><br>
+    
+    
+    <h1>기본 이벤트 제거</h1>
+    <form action="test.html" method="post">
+        아이디 : <input type="text" id="id"><br>
+        비밀번호 : <input type="password" id="pw"><br>
+        비밀번호 확인 : <input type="password" id="pw_re"><br>
+        <input type="submit" value="회원가입" onclick="return check();">
+    </form>
+    <script>
+        function check(){
+            var id = document.getElementById("id");
+            if(id.value == ""){
+                alert("아이디를 작성해주세요");
+                return false;          
+            }
+            
+            var pw = document.getElementById("pw");
+            var pw_re = document.getElementById("pw_re");
+            if(pw.value != pw_re.value){
+                alert("비밀번호가 다릅니다.");
+                pw.style.background = "red";
+                pw_re.style.background = "red";
+                return false;
+            }
+        }
+    </script>
+    
+    
+        
+      
+    <br><br><hr><br><br>
+    
+    <style>
+        #div4{
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+        }
+    </style>
+    
+    <div id="div4"></div>
+ 
+    <script>
+        window.onload = function(){
+            var div = document.getElementById("div4");
+//            div.onclick = function(){
+//                alert("클릭이벤트");
+//            }
+//            div.onmousedown = function(){
+//                alert("마우스다운");
+//            }
+//            div.onmouseup = function(){
+//                alert("마우스업");
+//            }
+            div.ondblclick = function(){
+                alert("더블클릭");
+            }
+//            div.onmouseover = function(){
+//                alert("마우스포인터가 영역에 들어옴");
+//            }
+//            div.onmouseout = function(){
+//                alert("마우스포인터가 영역 밖으로 나감");
+//            }
+            div.onmousemove = function(){
+                console.log("마우스가 움직인다아ㅏㅏㅏㅏ");
+            }
+            div.onmousewheel = function(dir){
+//                console.log("마우스 휠 돌아간다ㅏ");
+                if(dir.deltaY < 0){             // 매개변수 dir 쓰면 자동으로 값이 넘어옴
+                    console.log("휠 위로 돌린다!");
+                }else{
+                    console.log("휠 아래로 돌린다!");
+                }
+            }
+            
+        }
+    </script>
+    
+    
+       
+    
+    <br><br><hr><br><br>
+    
+    <input type="text" id="input">
+    
+    <script>
+        var input = document.getElementById("input");
+        input.onkeypress = function(){
+            console.log("키프레스 이벤트 발생 !!");
+        }
+        input.onkeydown = function(){
+            console.log("키 다운 이벤트 발생");
+        }
+        input.onkeyup = function(){
+            console.log("키업 이벤트 발생");
+        }
+    </script>
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    <form action="/test.html" id="enroll">
+        <fieldset>
+            <legend>회원가입</legend>
+            아이디 : <input type="text" id="m_id"><br>
+            비밀번호 : <input type="password" id="m_pw"><br>
+            <span id="msg"></span>
+            비밀번호 확인 : <input type="password" id="m_pw_re"><br>
+            <input type="submit" value="회원가입">
+        </fieldset>
+    </form>
+    
+    <script>
+        var m_id = document.getElementById("m_id");
+        var m_pw = document.getElementById("m_pw");
+        var m_pw_re = document.getElementById("m_pw_re");
+        
+        m_id.onfocus = function(){
+            m_id.style.backgroundColor="aqua";
+        }
+        m_id.onblur = function(){
+            m_id.style.backgroundColor="white";
+        }
+        m_pw.onfocus = function(){
+            m_pw.style.backgroundColor="aqua";
+        }
+        m_pw.onblur = function(){
+            m_pw.style.backgroundColor="white";
+        }
+        m_pw_re.onfocus = function(){
+            m_pw_re.style.backgroundColor="aqua";
+        }
+        m_pw_re.onblur = function(){
+            m_pw_re.style.backgroundColor="white";
+        }
+        
+        var form = document.getElementById("enroll");
+        form.onsubmit = function(){
+            if(!confirm("이대로 제출하시겠습니까?")){
+                return false;
+            }
+        }
+        
+        m_pw_re.onchange = function(){
+            if(m_pw.value == m_pw_re.value){
+                var msg = document.getElementById("msg");
+                msg.style.color = "blue";
+                msg.innerHTML = "비밀번호가 확인되었습니다.<br>";
+            }else{
+                var msg = document.getElementById("msg");
+                msg.style.color = "red";
+                msg.innerHTML = "비밀번호가 일치하지않습니다.<br>";
+                location.hash="#m_pw";
+            }
+        }
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

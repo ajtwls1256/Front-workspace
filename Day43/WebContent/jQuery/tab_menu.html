@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tab li{
+            list-style: none;
+            float: left;
+            cursor: pointer;
+            width: 33.3%;
+            border: 1px solid #ddd;
+            text-align: center;
+            box-sizing: border-box;
+            height: 89px;
+            line-height: 80px;
+        }
+        .tab{
+            border: 1px solid #ddd;
+            background: #fff;
+            overflow: hidden;
+        }
+        .on{
+            background: #eee;
+            color: red;
+        }
+        .tab_con{
+            clear:both;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+        }
+        .tab_con div{
+            height: 100px;
+            line-height: 100px;
+            background: #fff;
+            text-align: center;
+            display: none;
+        }
+    </style>
+    
+    <script>
+        $(function(){
+            $(".tab>li").click(function(){
+                var index = $(".tab>li").index(this);
+                $(".tab>li").removeClass("on");         // 초기화
+                $(this).addClass("on");                 // 선택된거 빨
+                var contents = $(".tab_con").children();
+                contents.css("display", "none");        // 초기화
+                
+                contents.eq(index).css("display","block");  // 선택된거 출력
+            });
+            
+            $(".tab>li").first().click();   // 새로고침시 A 선택되어있게하려고
+        });
+    </script>
+    
+    
+    
+</head>
+<body>
+    <ul class="tab">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+    <div class="tab_con">
+        <div>1st Contents</div>
+        <div>2st Contents</div>
+        <div>3st Contents</div>
+    </div>
+</body>
+</html>

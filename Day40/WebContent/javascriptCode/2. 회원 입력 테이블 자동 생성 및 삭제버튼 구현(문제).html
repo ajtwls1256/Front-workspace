@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+    #div1{
+        border:5px solid black;
+        height:800px;
+        width:1000px;
+    }
+</style>
+<center>
+    문제2. 추가 버튼을 클릭하면 이름,나이,주소를 입력 받은 후 테이블에 추가하도록 하여라.
+    
+    <table border="1" id="member">
+        <tr><th>이름</th><th>나이</th><th>주소</th><th>상태</th></tr>     
+    </table>
+
+<button onclick="add();">추가</button>
+    </center>
+
+
+  
+    
+<script>
+    var count = 0;
+    
+    function add(){
+        var table = document.getElementById("member");
+        var view = ["이름을 ", "나이를 ", "주소를 "];
+        
+        var tr = document.createElement("tr");
+        tr.setAttribute("id", count);
+        
+        
+        
+        var th = new Array();
+        var text = new Array();
+        
+        for(var i=0; i<3; i++){
+            th.push(document.createElement("th"));
+            text.push(document.createTextNode(prompt(view[i] +"입력하세요")));
+            
+            th[i].appendChild(text[i]); 
+        }
+        
+        var button = document.createElement("button");
+        button.setAttribute("type","button");
+        button.setAttribute("onclick","deleteLow("+count+");");
+        
+        var buttonText = document.createTextNode("삭제");
+        button.appendChild(buttonText);
+     
+        
+        for(var i=0; i<3; i++){
+            tr.appendChild(th[i]);
+        }
+        tr.appendChild(button);
+        
+        
+        table.appendChild(tr);
+        count++;
+    }
+    
+    function deleteLow(lowNum){
+        var th = document.getElementById(lowNum);
+        th.remove();
+    }
+    
+</script>
+    
+    
+    
+</body>
+</html>
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <button type="button" id="btn1">목록 가져오기</button>
+    <button type="button" id="btn2">목록 가져오기2</button>
+    <ul class="test1">
+        <li>Test1</li>
+        <li>Test2</li>
+        <li>Test3</li>
+    </ul>
+
+
+
+    <script>
+        $(function() {
+            $("#btn1").click(function() {
+                var arr = $(".test1>li");
+                $.each(arr, function(index, item) {
+                    alert("인덱스 번호 : " + index + " / 값 : " + item.innerHTML); // item은 JavaScript코드 사용에 주의 html() x, innerHTML o
+
+                });
+            });
+
+            $("#btn2").click(function() {
+                $(".test1>li").each(function(index, item) {
+                    alert("인덱스 번호 : " + index + " / 값 : " + item.innerHTML);
+                });
+            });
+
+            $(".test1>li").click(function() {
+                //                alert("li 클릭이벤트");
+                //                alert($(this).html());
+                alert($(this).index());
+            })
+        })
+    </script>
+
+
+    <br>
+    <hr><br>
+
+    <style>
+        .textChange {
+            font-size: 40px;
+            color: red;
+        }
+    </style>
+
+    <button type="button" id="btn3">클래스 추가</button>
+    <button type="button" id="btn4">클래스 제거</button>
+    <div class="classTest">
+        <p> 클래스 테스트 1</p>
+        <p> 클래스 테스트 2</p>
+    </div>
+
+
+    <script>
+        $(function() {
+            $("#btn3").click(function() {
+                $(".classTest").children().first().addClass("textChange");
+            });
+
+            $("#btn4").click(function() {
+                $(".classTest").children().first().removeClass("textChange");
+            });
+        });
+    </script>
+
+
+
+
+
+
+    <br>
+    <hr><br>
+
+    <img id="img" src="img/superball.jpg" width="200" height="200"><br>
+    <button type="button" id="btn5">파일 이름</button>
+    <button type="button" id="btn6">파일 크기</button>
+    <button type="button" id="btn7">이미지 키우기</button>
+    <button type="button" id="btn8">속성 지우기</button>
+    <script>
+        $(function() {
+            $("#btn5").click(function() {
+                var img = $("img").attr("src");
+                alert(img);
+            });
+            $("#btn6").click(function() {
+                var width = $("img").attr("width");
+                var height = $("img").attr("height");
+                alert(width + "," + height);
+            });
+            $("#btn7").click(function() {
+                $("#img").attr("width", 400).attr("height", 400);
+                //                $("#img").attr("height",400);
+            });
+
+            $("#btn8").click(function() {
+                $("#img").removeAttr("width");
+                $("#img").removeAttr("height");
+            });
+        });
+    </script>
+
+
+
+    <br>
+    <hr><br>
+
+    <style>
+        .first {
+            color: red;
+        }
+
+        .second {
+            color: pink;
+        }
+
+        .third {
+            color: orange;
+        }
+    </style>
+
+    <h1 class="first">Test1</h1>
+    <h1 class="second">Test2</h1>
+    <h1 class="third">Test3</h1>
+    <button type="button" id="btn9">스타일 확인하기</button>
+
+    <script>
+        $("#btn9").click(function(){
+            alert($(".first").css('color'));
+            alert($(".second").css('color'));
+            alert($(".third").css('color'));
+            
+            $(".first").css("background-color","skyblue");
+        })
+    </script>
+
+
+
+
+
+
+
+
+</body></html>

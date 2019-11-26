@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>  
+    <style>
+        .changeDiv{
+            border: 1px solid black;
+            background-color: black;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <h2>버튼으로 크기 조절하기</h2>
+    <div class="changeDiv" id="sizeChange"></div>
+    <button onclick="changeSize('50px')">50x50</button>
+    <button onclick="changeSize('100px')">100x100</button>
+    <button onclick="changeSize('200px')">200x200</button>
+    <script>
+        sizeChange = document.getElementById("sizeChange");
+        function changeSize(size){
+            sizeChange.style.width = size;
+            sizeChange.style.height = size;
+        }
+    </script>
+    
+    
+    <br><br><hr><br><br>
+    
+    <div class="changeDiv" id="chColor"></div>
+    <input type="color" id="selectColor">
+    <button type="button" onclick="chColor()">변경</button>
+    <script>
+        function chColor(){
+            var chColor = document.getElementById("chColor");
+            var selectColor = document.getElementById('selectColor');
+            chColor.style.backgroundColor = selectColor.value;
+            chColor.style.borderColor = selectColor.value;
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

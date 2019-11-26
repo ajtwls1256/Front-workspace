@@ -1,0 +1,99 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+
+
+    <h1> 배열 실습 문제 3</h1>
+    <br><br>
+   문제5. 다음 보기의 그림을 클릭하면 그림이 사라지고 그림을 모두 클릭하면 클릭한 순서대로 그림이 나올수 있도록 만들어라.<br>
+    (힌트 : 태그 자체를 가져올때에는 outerHTML을 사용하면 됨)<br>
+
+    <fieldset>
+        <style>
+            .divss {
+                float: left;
+            }
+        </style>
+        <legend>보기</legend>
+        <div id="div5">
+            <div style="border:1px solid black; height:100px; width:100px; background-color:red;" class="divss" id="red" onclick="pick(this)"></div>
+            <div style="border:1px solid black; height:100px; width:100px; background-color:blue;" class="divss" id="blue" onclick="pick(this)"></div>
+            <div style="border:1px solid black; height:100px; width:100px; background-color:green;" class="divss" id="green" onclick="pick(this)"></div>
+            <div style="border:1px solid black; height:100px; width:100px; background-color:pink;" class="divss" id="pink" onclick="pick(this)"></div>
+            <div style="border:1px solid black; height:100px; width:100px; background-color:yellow;" class="divss" id="yellow" onclick="pick(this)"></div>
+        </div>
+
+    </fieldset><br>
+
+    <script>
+        var save = "";        
+        var count = 0;
+        
+        function pick(color){
+            save += color.outerHTML;
+            
+            color.style.display = "none";
+            count++;
+            
+            if(count == 5){
+                var div5 = document.getElementById("div5");
+                div5.innerHTML = save;
+                
+                save = "";
+                count = 0;
+            }
+        }
+        
+        
+        
+        
+//        오류코드ㅡ 왜ㅐㅐ 안되에냐ㅑㅑㅑㅑ 나중에ㅔㅔㅔ 해결할ㄹ수있ㅆ으면ㄴ해봐ㅏ라ㅏㅏㅏ
+//        function pick(index){            
+//            console.log(divss[index]);
+//            alert(divss[index].style.backgroundColor);
+//            console.log("+++++++++++++++++++++++++++++");
+//            
+//            save.push(divss[index]);
+//            //divss[index].style.display = "none";
+//            divss[index].style.backgroundColor = "black";
+//            
+//            alert(divss[index].style.backgroundColor);
+//            
+//            save.push(divss[index]);
+//            
+//            var check = true;
+//            for(var i=0; i<divss.length; i++){
+//                if(divss[i].style.display != "none"){
+//                    check = false;
+//                }
+//            }
+//            for(var i=0; i<divss.length; i++){
+//                console.log(divss[i]);
+//            }
+//            
+//            console.log("**************************");
+//            
+//            for(var i=0; i<save.length; i++){
+//                console.log(save[i]);
+//            }
+//            
+//            if(check){
+//                for(var i=0; i<divss.length; i++){
+//                    divss[i] = save[i];
+//                    divss[i].style.display = "block";
+//                }
+//            }
+//            
+//             console.log("%%%%%%%%%%%%%%%%%%%%%%");
+//        }
+    </script>
+
+</body>
+
+</html>

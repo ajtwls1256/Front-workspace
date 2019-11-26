@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button type="button" onclick="window1()">open</button>
+    <button type="button" onclick="window2()">setTime</button>
+    <button type="button" onclick="test()">clearTime</button>
+    
+    
+    <script>
+        function window1(){
+            window.open("http://www.naver.com","_blank","width=500, height=500");
+        }
+        function window2(){     // 새 창 뜨고, alert뜨고, 3초 후 창 꺼짐
+            var myWindow = window.open();
+            myWindow.alert("3초 후 페이지 종료됨");
+            id = window.setTimeout(function(){
+                myWindow.close();
+            }, 3*1000);
+        }
+        function test(){        // setTime누르고 clearTime누르면 3초 후에도 창 안꺼짐 
+            window.clearTimeout(id);
+        }
+    </script>
+    
+    
+    
+    
+    <p> Window.setInterval 함수</p>
+    <button type="button" onclick="window3()">실행 확인</button>
+    <p id="p1" style="border: 5px solid black; height: 200px; width: 500px; font-size: 70px; color:red;"></p>
+    <button type="button" onclick="stop1()">중단하기</button>
+    
+    <script>
+        var intervalId;
+        function window3(){
+            var p1 = document.getElementById("p1");
+            intervalId = window.setInterval(function(){
+                var date = new Date();
+                p1.innerHTML = date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
+            }, 1000);
+        }
+        function stop1(){
+            window.clearInterval(intervalId);
+        }
+    </script>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    <p id="p2" style="border: 5px solid black; height: 200px; width: 500px; font-size: 70px; color:red;"></p>
+    <button type="button" onclick="window4()">실행 확인</button>
+    <button type="button" onclick="stop2()">중단하기</button>
+    <script>
+        var stopId;
+        function window4(){
+            var p2 = document.getElementById("p2");
+            var count = 0;
+            var miliSeconds;
+            stopId = window.setInterval(function(){
+                var date = new Date();
+                miliSeconds = date.getMilliseconds();
+                p2.innerHTML = count + " : " + miliSeconds;
+                if(miliSeconds >= 990){
+                    count++;
+                }
+            }, 10);
+        }
+        function stop2(){
+            window.clearInterval(stopId);
+        }
+        
+    </script>
+    
+    
+    <br><br><hr><br><br>
+    
+    
+        
+    <script>
+        window.onload = function(){     // 태그가 다 만들어지면 실행되므로 오류가나지않는다.
+            var p3 = document.getElementById("p3");
+        }
+        function window5(){
+            p3.innerHTML = "onload 버튼 클릭 완료";
+        }
+    </script>
+    
+    <p id="p3"></p>
+    <button type="button" onclick="window5()">onload</button>
+
+    
+    
+    
+    
+     
+    <br><br><hr><br><br>
+    
+    
+    <p id="p4"></p>
+    <button type="button" onclick="screenTest()">스크린객체테스트</button>
+    <script>
+        function screenTest(){
+            var p4 = document.getElementById("p4");
+            var str = "";
+            str += "화면 너비값 : " + screen.width + "<br>";
+            str += "화면 높이값 : " + screen.height + "<br>";
+            str += "실제 가용 너비 : " + screen.availWidth + "<br>";
+            str += "실제 가용 높이 : " + screen.availHeight + "<br>";
+            str += "사용 가능한 색상 수 : " + screen.colorDepth + "<br>";
+            str += "한 픽셀 당 비트 수 : " + screen.pixelDepth;
+            
+            p4.innerHTML = str;
+        }
+    </script>
+    
+    
+    
+    <button type="button" onclick="up()">위로가기</button>
+    <button type="button" onclick="down()">아래로가기</button>
+    <button type="button" onclick="gogo()">네이버로가기</button>
+    <button type="button" onclick="re()">새로고침</button>
+    <script>
+        function up(){
+            location.hash="top";                // 브라우저 창 맨 위로감
+        }
+        function down(){
+            location.hash = "bottom";           // 창 맨 아래로
+        }
+        function gogo(){
+            location.href = "http://www.naver.com"; // 네이버로
+        }
+        function re(){
+            location.reload();                  // 새로고침 됨
+        }
+    </script>
+    
+    
+    
+      
+    <br><br><hr><br><br>
+    
+    
+    
+    <p id="p5"></p>
+    <button type="button" onclick="geoTest()">네비게이터 객체테스트</button>
+    <script>
+        var latitude;
+        var longitude;
+        window.onload = function(){
+            navigator.geolocation.getCurrentPosition(showLocation); // getCurrentPosition() 의 매개변수가 함수명 이라서 함수명을 넣어줌 그럼 내부에서 알아서 showLocation의 매개변수인 position에 값을 넣어주고 그 값을 이용하면 된데. sort()처럼 내부적으로 처리되는게 있어서 뭔지 자세히는 모르겠다.
+        }
+        
+        function showLocation(position){
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+        }
+        function geoTest(){
+            document.getElementById("p5").innerHTML = "위도 : " + latitude + " 경도 : " + longitude;
+            
+            console.log(latitude);
+            console.log(longitude);
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

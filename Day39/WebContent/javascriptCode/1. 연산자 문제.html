@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+    <h3>문제. 다음 중 이쁜 사람은 누구인가요?</h3>	
+	<img src="img/jj.jpg" height="200px" width="200px" onclick="choice(this)"> 
+	<img src="img/ss.jpg" height="200px" width="200px"
+    onclick="choice(this)">	
+	
+    <script>
+        function choice(val){
+//            var img1 = document.getElementById("img1");
+//            var img2 = document.getElementById("img2");
+//            
+//            if(img==img1){
+//                img2.style.display = "none";
+//                img1.style.width = "400px";
+//                img1.style.height = "400px";
+//            }
+//            else{
+//                img1.style.display = "none";
+//                img2.style.width = "400px";
+//                img2.style.height = "400px";
+//            }
+         
+            
+//            var img = document.getElementById(img);
+//            
+//            if(img==img1){
+//                deleteImg = document.getElementById("img2");
+//                
+//            }
+//            else{
+//                deleteImg = document.getElementById("img1");
+//            }
+//            
+//            deleteImg.style.display = "none";
+//            img.style.width = "400px";
+//            img.style.height = "400px";
+//            img.style.border = "5px dashed red"
+            
+            
+            // id안주고
+//            var img = document.getElementsByTagName("img");
+//            
+//            if(i==0){
+//                deleteImg = img[1];
+//            }
+//            else{
+//                deleteImg = img[0];
+//            }
+//            
+//            deleteImg.style.display = "none";
+//            img[i].style.width = "400px";
+//            img[i].style.height = "400px";
+//            img[i].style.border = "5px dashed blue";
+            
+            
+            // this 사용
+            var arr = document.getElementsByTagName("img");
+            for(var i=0;i<arr.length;i++){
+                arr[i].style.display = "none";
+            }
+            val.style.display = "inline-block";
+            val.style.width = "400px";
+            val.style.height = "400px";
+            val.style.border = "5px dashed blue";
+        }
+    </script>
+	
+	
+</body>
+</html>

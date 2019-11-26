@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <form action="/action_page.html" method="get">
+        <p>고객명 : <input type="text"> </p>
+        <p>전화번호(필수) : <input type="text" required></p>
+        <p>E-mail : <input type="email"></p>
+        <p>피자선택(필수) : <select><option value="1">피자를 선택하세</option></select> </p>
+        <fieldset>
+            <legend>피자 사이즈(필수)</legend>
+            <input type="radio">Small <br><br>
+            <input type="radio" checked>Medium <br><br>
+            <input type="radio">Large <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <p><input type="checkbox">베이컨</p>
+            <p><input type="checkbox">치즈</p>
+            <p><input type="checkbox">양파</p>
+            <p><input type="checkbox">버섯</p>
+        </fieldset>
+
+        <p>희망 배송 시간 : <input type="time"></p>
+        <p>배송시 요청사항 : <textarea row="10" col="30"></textarea></p>
+
+        <button type="submit">주문하기</button>
+    </form>
+
+
+    <br>
+    <hr><br>
+
+    <form action="/action_page.html" method="get">
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <p>1. 납품자명(필수) : <input type="text" required></p>
+            <p>2. email(필수) : <input type="email" required></p>
+            <p>3. 홈페이지 : <input type="url" value="http://"></p>
+            <p>지역 : <select>
+                    <option value="서울">서울</option>
+                    <option value="부산" selected>부산</option>
+                </select>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>납품정보</legend>
+            <ul>
+                <li>상품명(필수) : <input type="text" required></li><br>
+                <li>납품수량(필수): <input type="text" placeholder="최소 100"></li><br>
+                <li>납품등급(필수): <input type="range" min="5" max="100"></li><br>
+                <li> 기타사항 : <textarea row="5" col="15"></textarea></li>
+            </ul>
+        </fieldset>
+        <br>
+        <button type="submit">send message</button>
+    </form>
+
+
+    <br>
+    <hr><br>
+
+    <h1>
+        <center>회원 가입</center>
+    </h1>
+    <h4>
+        <center>가입할 회원 정보를 입력하세요</center>
+    </h4>
+    <form>
+        <center>
+            아이디 : <input type="text" placeholder="아이디를 입력하세요"><br>
+            비밀번호 : <input type="text" placeholder="비밀번호를 입력하세요"><br>
+            비밀번호(re) : <input type="text" placeholder="비밀번호 재확인"><br>
+            이름 : <input type="text" placeholder="이름을 입력하세요"><br>
+            나이 : <input type="text" placeholder="나이를 입력하세요"><br>
+            이메일 : <input type="email" placeholder="이메일을 입력하세요"><br>
+            폰번호 : <input type="text" placeholder="폰번호를 입력하세요"><br>
+            주소 : <input type="text" placeholder="주소를 입력하세요"><br>
+            성별 : <input type="radio">남 <input type="radio">여<br>
+            취미 : <input type="checkbox"> 운동 <input type="checkbox"> 음악 <input type="checkbox"> 춤
+            <input type="checkbox"> 맛집탐방 
+           
+            <br>
+            <button type="submit">가입하기</button> 
+            <button type="reset">취소</button>
+            </center>
+    </form>
+
+
+
+
+    <br><br><br><br><br><br><br>
+</body></html>

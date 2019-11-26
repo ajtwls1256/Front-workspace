@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <h3>일반 구조 선택자</h3>
+    <p>특정한 위치에 있는 태그 선택(위치로 구분)</p>
+
+    <style>
+        #div1 p {
+            background-color: lightgreen;
+            color: aliceblue;
+        }
+
+        #div1 p:first-child {
+            background-color: red;
+        }
+
+        #div1 p:nth-child(3) {
+            background-color: darkturquoise;
+        }
+
+    </style>
+
+    <div id="div1">
+        <p>테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+    </div>
+    <p>테스트5</p>
+    <pre>테스트6</pre>
+    
+    <hr>
+    
+    <style>
+        #div2 p{
+            background-color: lightgreen;
+            color: aliceblue;
+        }
+        #div2 p:first-of-type{
+            background-color: red;
+        }
+        #div2 p:nth-of-type(3){
+            background-color: darkturquoise;
+        }
+        #div2 p:last-of-type{
+            background-color: burlywood;
+        }
+    </style>
+    
+    <h3>형태 구조 선택자(태그 별로 구분)</h3>
+    <p>특정한 위치에 있는 태그 선택(태그 별로 구분)</p>
+    <div id="div2">
+        <p>테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+        <p>테스트5</p>
+    </div>
+    <pre>테스트6</pre>
+    
+    <hr>
+    
+    <h3>문자 선택자</h3>
+    <p>태그 내부에서 특정 조건의 문자를 선택하는 선택자</p>
+    
+    <style>
+        #letter::first-letter{
+            font-size: 2em;
+        }
+        #letter::first-line{
+            background-color: aqua;
+        }
+    </style>
+    
+    <p id="letter">1. 대법원장은 국회의 동의를 얻어 대통령이 임명한다. 감사위원은 원장의 제청으로 대통령이 임명하고<br>
+        대하여 또는 법률안을 수정하여 재의를 요구할 수 없다. 모든 국민은 자기의 행위가 아닌 친족의 행위로 인하여 불이익</p>
+
+    <hr>
+    
+    <h3>부정 선택자</h3>
+    <p>지금까지의 선택자에 반대로 적용하는 선택자</p>
+    
+    <style>
+        #div3>p:not(.orange){
+            background-color: orange;
+        } 
+    </style>
+    <div id="div3">
+        <p class="orange">테스트1</p>
+        <p>테스트2</p>
+        <p class="orange">테스트3</p>
+        <p>테스트4</p>
+        <p class="orange">테스트5</p>
+    </div>
+    
+
+</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button type="button" onclick="test1()">객체 확인</button>
+    <button type="button" onclick="test2()">객체 확인2</button>
+    <button type="button" onclick="test3()">객체 확인3</button>
+    <script>
+        function test1(){
+            var testObj = {a:100, b:200};
+            console.log(testObj);               // {a: 100, b: 200}
+            console.log(testObj.a);             // 100
+            console.log(testObj['b']);          // 200
+            console.log(Object.keys(testObj).length);   // 2
+            
+            
+            testObj.a = 300;
+            testObj['b'] = 400;
+            console.log(testObj);               // {a: 300, b: 400}
+            
+            testObj.c = 500;                    // 속성 추가
+            console.log(testObj);               // {a: 300, b: 400, c: 500}
+            
+            delete(testObj.c);                  // 속성 삭제
+            console.log(testObj);               // {a: 300, b: 400}
+            
+            // 키워드 in 객체명
+            // 해당 키워드가 있으면 true/ 없으면 false
+            console.log('a' in testObj);        // true
+            console.log('c' in testObj);        // false
+            
+            var testobj2 = {
+                a:100,
+                b:200,
+                c:function(){
+                    alert("Hello");
+                    return "Test";
+                }
+            }
+            console.log(testobj2);              // {a: 100, b: 200, c: ƒ}   -> f는 함수를 의미
+            console.log(testobj2.c());          // alert로 Hello 뜨고 console에는 Test
+            
+            testobj2.testFunc = function(){     // 속성으로 함수 추가
+                alert("난 추가된 함수");
+            }
+            console.log(testobj2.testFunc());   // alert로 난 추가된 함수 뜨고 반환값을 주지 않았으므로 undefined 나옴
+            
+            
+            var testObj3 = {a:1, b:true, c:"Hello"};
+            // 객체의 키값말고 속성값만 가져오고 싶을때 -> for in 문 사용
+            for(var k in testObj3){                          // k 에 key 값이 순서대로 들어감
+                console.log(k + " : " + testObj3[k]);        // a : 1   ->  b : true   -> c : Hello
+            }
+        }
+        
+        // 내부 속성 사용
+        function test2(){
+            var name = prompt("당신의 이름은?");
+            var age = prompt("당신의 나이는?");
+            var addr = prompt("당신의 주소는?");
+            var object = {name:name, age:age, addr:addr
+                          , print:function(){
+                              var str = "이름 : " + this.name + "\n나이 : " + this.age + "\n주소 : " + this.addr;
+                              
+                              return str;
+                            }
+                         };
+            
+            console.log(object.print());
+        }
+        
+        // 객체 배열 사용
+        function test3(){
+            var objArr = [];
+            var test1 = {a:100, b:200};
+            var test2 = {name:"이윤수", addr:"서울"};
+            var test3 = {subject:"js"};
+            objArr.push(test1);
+            objArr.push(test2);
+            objArr.push(test3);
+            console.log(objArr);
+            console.log(objArr[0].a);       // 100
+            console.log(objArr[1].name);    // 이윤수
+        }
+    </script>
+</body>
+</html>

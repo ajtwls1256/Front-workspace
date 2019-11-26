@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <style>
+        div {
+            
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .all {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            height: 150px;
+        }
+
+        #h1 {
+            width: 25%;
+            height: 100%;
+            float: left;
+            line-height: 270px;
+        }
+
+        #h2 {
+            width: 50%;
+            height: 100%;
+            float: left;
+            line-height: 270px;
+        }
+
+        #h3 {
+            width: 25%;
+            height: 100%;
+            float: left;
+        }
+
+        #navi {
+            height: 50px;
+            padding: 5px;
+        }
+        
+        .navi{
+            float: left;
+            width: 25%;
+            height: 100%;
+            background-color: yellowgreen;
+            color: aliceblue;
+            line-height: 42px;
+        }
+        
+        .contents {
+            height: 500px;
+        }
+
+        .content {
+            display: inline-block;
+        }
+
+        #c1 {
+            width: 20%;
+            height: 100%;
+            float: left;
+        }
+
+        #c2 {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+
+        #main_img1{
+            float: left;
+            width: 50%;
+            height: 50%;
+            
+        }
+        #main_img2{
+            float:left;
+            width: 50%;
+            height: 50%;
+        }
+        #main_img3{
+            float: left;
+            width: 50%;
+            height: 50%;
+        }
+        #main_img4{
+            float:left;
+            width: 50%;
+            height: 50%;
+        }
+        #c3 {
+            width: 30%;
+            height: 100%;
+            float: left;
+        }
+
+        #loginAll {
+            width: 100%;
+            height: 80px;
+        }
+
+        #loginContent {
+            height: 50px;
+        }
+
+        #loginFooter {
+            height: 30px;
+        }
+
+        #loginInput {
+            width: 60%;
+            height: 100%;
+            float: left;
+        }
+
+        #loginId {
+            height: 50%;
+        }
+
+        #loginPw {
+            height: 50%;
+        }
+
+        #loginSubmit {
+            width: 40%;
+            height: 100%;
+            float: left;
+            line-height: 45px;
+        }
+
+        #loginButton {
+            width: 70%;
+            height: 90%;
+        }
+
+        #right_img {
+            height: 270px;
+        }
+
+        #me_chat {
+            height: 150px;
+        }
+
+        .footer {
+            height: 150px;
+            line-height: 300px;
+        }
+        
+        a{
+            text-decoration: none;
+            font-size: 12px;
+        }
+    </style>
+
+    <div class="all">
+        <div class="header">
+            <div id="h1"><img src="img/logo.jpg" id="logo"></div>
+            <div id="h2"><img src="img/mainlogo.jpg" width="100%"></div>
+            <div id="h3"></div>
+        </div>
+        <div id="navi">
+            <div class="navi" id="navi1">Home</div>
+            <div class="navi" id="navi2">Profile</div>
+            <div class="navi" id="navi3">Board</div>
+            <div class="navi" id="navi4">Contact</div>
+        </div>
+        <div class="contents">
+            <div class="content" id="c1"><img src="img/left_img.jpg" height="90%" width="90%"></div>
+            <div class="content" id="c2">
+                <div id="main_img1">
+                    <img src="img/main_img1.jpg" width="95%" height="82%"><br>나무를 심는 사람들
+                </div>
+                <div id="main_img2">
+                    <img src="img/main_img2.jpg" width="95%" height="82%"><br>아이들에게 녹색미래를..
+                </div>
+                <div id="main_img3">
+                    <img src="img/main_img3.jpg" width="95%" height="82%"><br>설악산을 살리는 길
+                </div>
+                <div id="main_img4">
+                    <img src="img/main_img4.jpg" width="95%" height="82%"><br>사라지는 북극곰들
+                </div>
+            </div>
+            <div class="content" id="c3">
+                <div id="loginAll">
+                    <div id="loginContent">
+                        <div id="loginInput">
+                            <div id="loginId">
+                                <input type="text" placeholder="ID를 입력하세요." id="inputId">
+                            </div>
+                            <div id="loginPw">
+                                <input type="text" placeholder="PW를 입력하세요." id="inputPw">
+                            </div>
+                        </div>
+                        <div id="loginSubmit">
+                            <button type="submit" id="loginButton">로그인</button>
+                        </div>
+                    </div>
+                    <div id="loginFooter">
+                        <a href="https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=ko_KR&cpno=" target="_blank">회원가입</a>
+                        <a href="https://nid.naver.com/user2/help/idInquiry.nhn?menu=idinquiry" target="_blank">ID</a>/<a href="https://nid.naver.com/user2/help/pwInquiry.nhn?menu=pwinquiry" target="_blank">PW 찾기</a>
+                    </div>
+                </div>
+                <div id="right_img">
+                    <img src="img/right_img.jpg" width="100%" height="100%">
+                </div>
+                <div id="me_chat">
+                    <img src="img/me_chat.jpg" width="80%" height="80%">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="img/footer.JPG">
+        </div>
+    </div>
+</body></html>

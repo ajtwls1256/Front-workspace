@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>탭메뉴 만들기</title>
+    
+    <style>
+        .navi{
+            width: 800px;
+            height: 50px;
+            padding: 0px;
+            background-color: black;
+            background-color:dodgerblue;
+            color:whitesmoke;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .navi>li{
+            width: 100px;
+            height: 50px;
+            list-style-type: none;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            
+        }
+        .navi>li:hover{
+            background-color: whitesmoke;
+            color:dodgerblue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .navi>li>ul{
+            padding: 0px;
+            width: 800px;
+            height: 50px;
+            background-color:deepskyblue;
+            color:floralwhite;
+            display: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .navi>li>ul>li{
+            width: 100px;
+            height: 50px;
+            list-style-type: none;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .navi>li>ul>li:hover{
+            background-color:floralwhite;
+            color:deepskyblue;
+        }
+        
+        .navi>li:hover ul{
+            display: block;
+        }
+        
+        .position{
+            position:absolute;
+            left: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>가로 탭 메뉴 만들기</h1>
+    <hr>
+    
+    <ul class="navi">
+        <li>Home</li>
+        <li>웹개발
+            <ul class="position">
+                <li>웹디자인</li>
+                <li>HTML5+CSS3</li>
+                <li>JQuery</li>
+                <li>웹+모바일</li>
+            </ul>
+        </li>
+        <li>게시판
+            <ul class="position">
+                <li>Q&A</li>
+                <li>방명록</li>
+            </ul>
+        </li>
+        <li>프로필</li>
+    </ul>
+</body>
+</html>

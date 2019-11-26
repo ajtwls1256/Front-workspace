@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <p id="p1" class="test">Test1</p>
+    <p id="p2" class="test">Test2</p>
+    <p id="p3" class="test">Test3</p>
+    <p id="p4">Test4</p>
+    <span id="span1" class="test">Test5</span><br>
+    <span id="span2">Test6</span>
+ 
+    
+    <script>
+        /*
+        
+//        function test(){
+//            var tests = document.getElementsByClassName("test");
+//            
+//            for(var i=0; i<tests.length; i++){
+//                tests[i].style.color = "red";
+//            }
+//        }
+        
+        // 위의 코드를 jQuery로 작성하면
+        function test(){
+            $(".test").css('color','red');
+        }
+        
+        
+   
+//        window.onload = function(){
+//            
+//        }
+        
+        // 위의 코드와 같은 역할을 하는 jQuery는
+        $(document).ready(function(){
+            
+        });
+        // 위의 것도 길다하여 줄인게 아래 코드
+        $(function(){
+            
+        });
+
+        */
+    </script>
+    
+    <script>
+        $(document).ready(function(){
+//            $('*').css('color','red');
+            $('span').css('background-color','yellow');
+            $('#p4').css('background-color','skyblue');
+            $('.test').css('text-decoration','underline');
+            $("#p2,#p3").css('background-color','pink');
+        });
+    </script>
+    
+    
+    
+    <br>
+    
+    
+    
+    
+    <div>
+        <ul>
+            <li><h1>Test1</h1></li>
+            <li>Test2</li>
+            <li>Test3</li>
+            <li>Test4</li>
+        </ul>
+        <h1>Test5</h1>
+    </div>
+    
+    <script>
+        $("li>h1").css("color", "blue");
+        $("div h1").css("background-color", "green");
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    <input type="text" name="id"><br>
+    <input type="password" name="pw"><br>
+    <script>
+        $(function(){
+           $("input[type=text]").css("background-color","red");
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <select>
+        <option>AAAA</option>
+        <option>BBBB</option>
+        <option>CCCC</option>
+        <option>DDDD</option>
+    </select>
+    <button type="button" onclick="sel()">클릭</button>
+    
+    <script>
+        function sel(){
+            var value = $("select>option:selected").html();
+            alert(value);
+        }
+    </script>
+    
+    
+    
+    
+    
+    <br><hr><br>
+    <table>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>2</td><td>2</td></tr>
+        <tr><td>3</td><td>3</td><td>3</td></tr>
+    </table>
+    
+    <script>
+        $(function(){
+//            $("tr:odd").css('color','red'); 
+//            $("tr:even").css('background-color','gray'); 
+//            $("tr:first").css('color','black').css('background-color','aqua');          // 요소 하나에 두개넣기1
+//            $("tr:last").css({
+//                'color':'red', 
+//                'background-color':'yellow'
+//            });         // 요소 하나에 두개넣기2
+//        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <br><hr><br>
+    <table id="tbl">
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>2</td><td>2</td></tr>
+        <tr><td>3</td><td>3</td><td>3</td></tr>
+        <tr><td>3</td><td>3</td><td>3</td></tr>
+        <tr><td>3</td><td>3</td><td>3</td></tr>
+        <tr><td>3</td><td>3</td><td>3</td></tr>
+    </table>
+    
+    <script>
+        $("#tbl>tbody>tr:eq(0)").css("background","black").css("color","white");
+        $("#tbl td:nth-child(3n+1)").css('background','green');
+        $("#tbl td:nth-child(3n+2)").css('background','blue');
+    </script>
+    
+    
+
+    
+    
+  
+
+</body>
+</html>

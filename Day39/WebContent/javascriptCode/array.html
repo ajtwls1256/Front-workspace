@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button type="button" onclick="arrayTest();">배열 테스트</button>
+    <script>
+        function arrayTest(){
+            var arr = new Array();
+            arr[0] = 123;
+            arr[1] = 200;
+            arr[3] = 400;
+            arr[4] = "배열";
+            console.log(arr);
+            
+            var arr1 = [100, "이윤수", true, [1,2,3,4,5]];
+            console.log(arr1);
+            
+            var arr2 = arr.concat(arr1);
+            console.log(arr2);
+            var arr3 = arr.concat(arr1, arr2);
+            console.log(arr3);
+        }
+    </script>
+    
+    
+    <br><br><hr><br><br>
+    
+    <p>다음 중 좋아하는 과일을 입력하세요</p>
+    <p>바나나/포도/복숭아/수박</p>
+    <input type="text" placeholder="과일이름입력" id="fruit">
+    <button type="button" onclick="indexTest();">결과 확인</button>
+    
+    <script>
+        function indexTest(){
+            var fruit = document.getElementById("fruit");
+            var fruits = ['바나나','포도','복숭아','수박'];
+            var value = fruits.indexOf(fruit.value);
+            
+            if(value >= 0){
+                alert("배열의 " + value + "번째에 있습니다.");
+            }
+            else{
+                alert("입력하신 과일은 없습니다.");
+            }
+        }
+    </script>
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    <button type="button" onclick="joinTest();">조인테스트</button>
+    <button type="button" onclick="toStringTest()">toString 테스트</button>
+    <button type="button" onclick="reverseTest()">reverse 테스트</button>
+    <button type="button" onclick="sortTest()">sort 테스트</button>
+    <button type="button" onclick="pushTest()">push 테스트</button>
+    <button type="button" onclick="popTest()">pop 테스트</button>
+    
+    <script>
+        fruits = ['바나나','포도','복숭아','수박'];
+        function joinTest(){
+            alert(fruits.join("/"));    // 바나나/포도/복숭아/수박
+        }
+        function toStringTest(){
+            alert(fruits.toString());   // 바나나,포도,복숭아,수박
+        }
+        function reverseTest(){
+            alert(fruits.reverse());    // 원본 자체를 뒤집음   // 수박,복숭아,포도,바나나
+        }
+        function sortTest(){
+            var arr = [1,5,2,6,10,22,4];
+            arr.sort(sortASC);  
+            console.log(arr);           // [1,2,4,5,6,10,22]
+        }
+        function sortASC(a,b){          // 숫자 오름차순 시
+            return a-b;
+        }
+        function sortDESC(a,b){         // 숫자 내림차순 시
+            return b-a;
+        }
+        
+        function pushTest(){            // [바나나,포도,복숭아,수박,사과]
+            fruits.push("사과");
+            console.log(fruits);
+        }
+        function popTest(){
+            fruits.pop();               // [바나나,포도,복숭아]
+            console.log(fruits);
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    <button type="button" onclick="sliceTest()">slice</button>
+    <button type="button" onclick="spliceTest()">splice</button>
+    <script>
+        function sliceTest(){
+            var fruits = ['바나나','포도','복숭아','수박', '사과'];
+            console.log(fruits.slice(2));   // 2번부터 쭉 가져옴
+            console.log(fruits.slice(1,3)); // 1번부터 3번 전까지
+            console.log(fruits);
+        }
+        
+        function spliceTest(){
+            var fruits = ['바나나','포도','복숭아','수박', '사과'];
+            console.log(fruits.splice(1,2));        // 1번부터 2개를 지워라, 지운거 반환
+            console.log(fruits);
+            console.log(fruits.splice(1,2,"거봉")); // 1번부터 2개를 지우고 "거봉"을 넣어라, 지운거 반환
+            console.log(fruits);
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

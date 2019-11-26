@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    
+    <script>
+//        inline방식
+        function testfunc(){
+            alert("hi");
+        }
+        
+//        internal방식
+        window.onload = function(){
+            document.getElementById("btn").onclick=function(){
+                alert("인터널방식");
+            }
+        }
+    </script>
+
+    <!-- external방식 -->
+    <script src="js/test.js"></script>
+</head>
+<body>
+    <!-- inline방식 -->
+    <button onclick="javascript:alert('Hello')">눌러보세요</button>
+    <button onclick="testfunc();">이것도 눌러보시죠</button>
+    
+    <hr>
+    <!-- internal방식 -->
+    <button id="btn">클릭</button>
+    
+    <hr>
+    <!-- external방식 -->
+    <button onclick="test();">클릭클릭</button>
+    
+    <br>
+    <hr>
+    
+    <script>
+        function myfunc(){
+            document.write("<h1>버튼을 클릭하셨습니다.</h1>");
+        }
+    </script>
+    <button onclick="myfunc()">클릭</button>
+    
+    <br>
+    <hr>
+    
+    <script>
+        function changeMessage(){
+            // js 에선 모든 변수가 var 이다.
+            var p1 = document.getElementById("p1"); // id가 p1인 element를 p1 변수에 저장
+            console.log(p1.innerHTML);
+            console.log("자바스크립트 잘 동작하나");
+            p1.innerHTML = "<span style='color:red;'>변경 후</span>";
+        }
+        function confirmTest(){
+            var result = confirm("당신은 남자입니까?");
+            alert(result);
+            if(result == true){
+                alert("남자");
+            }
+            else{
+                alert("여자");
+            }
+        }
+        function insertData(){
+            var name = prompt("당신의 이름은?");
+            var age = prompt("당신의 나이는?");
+            var addr = prompt("사는 곳은?");
+            var name1 = document.getElementById("name");
+            name1.innerHTML = name;
+            var age1 = document.getElementById("age");
+            age1.innerHTML = age;
+            
+            document.getElementById("addr").innerHTML = addr;
+            document.getElementById("total").innerHTML = name+"/"+age+"/"+addr;
+        }
+    </script>
+    <p id="p1" onclick="changeMessage()">변경 전</p>
+    
+    
+    <button onclick="confirmTest()">컨펌테스트</button>
+    <br><br><br>
+    
+    이름 : <span id="name"></span><br>
+    나이 : <span id="age"></span><br>
+    주소 : <span id="addr"></span><br>
+    종합 : <span id="total"></span><br>
+    <button onclick="insertData();">데이터 입력</button>
+    
+    <br><hr>
+    <script>
+        function check(){
+            var id = document.getElementById("id");
+            var pw = document.getElementById("pw");
+            alert(id.value);
+            alert(pw.value);
+//            if(id.value == ""){
+//                alert("아이디를 입력해주세요.");
+//            }
+                
+        }
+    </script>
+    
+    
+    아이디 : <input type="text" id="id"><br>
+    비빌번호 : <input type="password" id="pw"><br>
+    <button type="button" onclick="check();">클릭</button>
+    
+    
+    <hr>
+    
+    <script>
+        function idTest(){
+//            var pp1 = document.getElementById("pp1");
+//            pp1.innerHTML = "변경완료";
+            
+//            var pp1 = document.getElementsByClassName("pp1");
+//            pp1[0].innerHTML ="변경완료";
+//            pp1[1].innerHTML = "변경완료2";
+//            pp1[2].innerHTML = "변경완료3";
+//            pp1[3].innerHTML = "변경완료4";
+//            pp1[4].innerHTML = "변경완료5";
+            
+            
+            
+            var pp1 = document.getElementsByTagName("p");
+            
+            // for문도 가능
+            for(var i=0;i<pp1.length;i++){
+                pp1[i].innerHTML = "변경완료";
+            }
+        }
+    </script>
+    <p id="pp1" class="pp1">내용1</p>
+    <p class="pp1">내용2</p>
+    <p class="pp1">내용3</p>
+    <p class="pp1">내용4</p>
+    <p class="pp1">내용5</p>
+    <button type="button" onclick="idTest();">클릭</button>
+    
+    <hr>
+    <script>
+        var globalValue="전역변수입니다.";
+        function global(){
+            alert(globalValue);                                           
+        }
+        function local(){
+            var localValue="지역변수입니다.";
+            alert(localValue);
+        }
+        function tt(){
+            alert(localValue);
+        }
+    </script>
+    
+    
+    <button type="button" onclick="global();">전역변수 테스트</button>
+    <button type="button" onclick="local();">지역변수 테스트</button>
+    <button type="button" onclick="tt();">다른함수에서 호출</button>
+    
+    
+    <hr>
+    
+    <script>
+        function stringFunc(){
+            var sTest = document.getElementById("stringTest");
+            var str = sTest.innerHTML;
+//            alert(str.toLowerCase());     // html,css,javascript,jquery
+//            str = str.length;
+//            sTest.innerHTML = str;        // 26
+            
+//            str = str.lastIndexOf("J");       // 20
+//            sTest.innerHTML = str;
+            
+//            str = str.charAt(3);  // L
+//            sTest.innerHTML = str;
+            
+//            str = str.substring(5,8);   // CSS
+//            sTest.innerHTML = str;
+            
+            var data = str.split(",");      // HTML -> CSS -> JAVASCRIPT -> JQUERY
+            for(var i=0;i<data.length;i++){
+                alert(data[i]);
+            }
+            sTest.innerHTML = str;
+        }
+    </script>
+    
+    <div style="border: 1px solid red; height: 100px; width: 400px;">
+        <p id="stringTest">HTML,CSS,JAVASCRIPT,JQUERY</p>
+        <button type="button" onclick="stringFunc();">문자열 함수 테스트</button>
+    </div>
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    
+    <div style="border: 1px solid blue; height: 100px; width: 400px;">
+        <p id="numberTest"></p>
+        <button type="button" onclick="numFunc();">숫자 함수 테스트</button>
+    </div>
+    <script>
+        function numFunc(){
+            var id = document.getElementById("numberTest");
+//            var data = Math.abs(-3.1);    // 3
+//            var data = Math.random();     // 랜덤 소수
+//            var data = Math.round(3.64);  // 4
+//            var data = Math.floor(3.64);  // 3
+            var data = Math.ceil(3.14);     // 4
+            id.innerHTML = data;
+        }
+    </script>
+    
+    
+    
+    
+    <br><br><hr><br><br>
+    
+    
+    <script>
+        function control(){
+            var value = prompt("숫자를 입력하세요");
+            // 입력한 숫자가 홀수인지 짝수인지 판단해서 alert로 출력
+            if(value%2==0){
+                alert("짝수입니다.");
+            }
+            else{
+                alert("홀수입니다.");
+            }
+            
+            value%2==0 || alert("홀수입니다.");
+            value%2==0 && alert("홀수입니다.");
+        }
+    </script>
+    <button onclick="control()">제어문 테스트</button>
+    
+    
+    
+    
+    
+    
+    <br><hr><br>
+    
+    
+    
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+    <div id="div1" onclick="changeColor()"></div>
+    <script>
+        var status = 1;
+        function changeColor(){
+            var div1 = document.getElementById("div1");
+            if(status > 0){
+                div1.style.backgroundColor = "blue";
+                div1.style.width="500px";
+            }else{
+                div1.style.backgroundColor="red";
+                div1.style.width="300px";
+            }
+            status *= -1;
+        }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

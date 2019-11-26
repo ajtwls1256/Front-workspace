@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+    <style>
+        body div{
+/*            border: 1px solid black;*/
+            box-sizing: border-box;
+        }
+        
+        #wrapper{
+            width: 1150px;
+            height: 4400px;
+/*            padding: 0px 40px;*/
+            margin: 0px auto;
+        }
+        
+        #header{
+            height: 121px;
+            border-bottom: 1px solid navy;
+        }
+        
+        #header>img{
+            width: 124px;
+            height: 27px;
+            padding: 24px 0px 0px 15px;
+            margin-left: 13px;
+        }
+        
+        #navi{
+            height: 44px;
+            margin-top: 20px;
+            border-top: 1px solid #d8d8d8;
+/*            border-bottom: 1px solid navy;*/
+        }
+        
+        #navi>ul{
+            list-style: none;
+            height: 100%;
+            margin: 0px;
+        }
+        #navi>ul>li{
+            float: left;
+            height: 100%;
+            width: 9%;
+            font-size: 18px;
+            color: #282828;
+            margin: 0px 23px;
+            padding: 10px 0px 0px;
+        }
+        #navi>ul>li:last-child{
+            padding: 6px 0px 0px;
+        }
+        #navi>ul>li>input{
+            height: 20px;
+        }
+        
+        #body{
+            height: 4200px;
+            padding: 54px 0px 70px;
+            margin: 0px 45px;
+        }
+        #title{
+            font-size: 30px;
+            color: #282828;
+            padding-left: 15px;
+            height: 66px;
+        }
+        #content{
+            height: 4000px;
+            border: 1px solid #d8d8d8;
+            padding: 40px;
+        }
+        
+        #content>p{
+            font-size: 15px;
+            color: #707070;
+        }
+        
+        #tab{
+            height: 70px;
+            padding-top: 15px;
+            
+        }
+        
+        #tab>ul{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            border-bottom: 1px solid navy;
+            height: 50px;
+        }
+        
+        #tab>ul>li{
+            float: left;
+            display: block;
+            height: 100%;
+            padding: 15px 30px;
+            box-sizing: border-box;
+            margin-right: -1px;
+        }
+        
+        .off{
+            border: 1px solid #d8d8d8;
+            background-color: #f2f2f2;
+        }
+        
+        .on{
+            font-weight: bold;
+            color: navy;
+            border-top: 1px solid navy;
+            border-left: 1px solid navy;
+            border-right: 1px solid navy;
+            border-bottom: 1px solid white;
+            background-color: transparent;
+        }
+        
+    </style>
+    
+    <script>
+        $(function(){
+            
+            $("#tab>ul>li").click(function(){
+//            alert("클릭");
+            $("#tab>ul>li").removeClass("on");
+            $("#tab>ul>li").addClass("off");
+            $(this).addClass("on");
+            
+                
+                
+            });
+            
+        });
+        
+
+    </script>
+    
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <img src="img/logo.png">
+            
+            <div id="navi">
+                <ul>
+                    <li>제품</li>
+                    <li>서비스</li>
+                    <li>제품구매</li>
+                    <li>다운로드</li>
+                    <li>고객지원</li>
+                    <li>보안정보</li>
+                    <li><input type="text"></li>
+                </ul>
+            </div>
+        </div>
+        <div id="body">
+            <div id="title">
+                이용약관
+            </div>
+            <div id="content">
+                <p>AhnLab에서 제공하는 서비스 이용과 관련하여 필요한 사항을 규정합니다.</p>
+                
+                <div id="tab">
+                    <ul>
+                        <li class="off">AhnLab.com 회원 이용약관</li>
+                        <li class="off">안랩몰 이용약관</li>
+                        <li class="off">콘텐츠 이용약관</li>
+                    </ul>
+                </div>
+                <div id="texts">
+                     <div id="text1">
+                     </div>
+                     <div id="text2">
+                     </div>
+                     <div id="text3">
+                     </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+    
+    
+    
+    
+</body>
+</html>

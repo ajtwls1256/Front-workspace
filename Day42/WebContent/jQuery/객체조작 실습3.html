@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+
+
+
+
+    <style>
+        div {
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+
+    문제3<br>
+    다음 2개의 그림 중 선택한 후 복사 될 수 있도록 구현하여라 <br>
+    <fieldset style="width:300px; margin:30px">
+        <legend>2개의 그림 중 선택하시오.</legend>
+        <div id="img1" style="background-color:red;">
+
+        </div>
+        <div id="img2" style="background-color:blue;">
+        </div>
+    </fieldset>
+
+    <fieldset style="width:800px;  margin:30px">
+
+        <legend>복사되는 공간</legend>
+
+        <div id="div1">
+
+        </div>
+        <div id="div2">
+
+        </div>
+        <div id="div3">
+
+        </div>
+        <div id="div4">
+
+        </div>
+        <div id="div5">
+
+        </div>
+        <div id="div6">
+
+        </div>
+        <div id="div7">
+
+        </div>
+    </fieldset>
+
+
+
+    <button id="btn1"> 초기화 </button>
+
+
+
+
+    <script>
+        $(function() {
+            var color;
+
+
+//            $("#img1").click(function() {
+//                color = $(this).css("background-color");
+//            });
+//
+//            $("#img2").click(function() {
+//                color = $(this).css("background-color");
+//            });
+            
+            
+            $("div").click(function(){
+                var index = $("div").index(this);   // 자신의 인덱스를 반환
+//                alert(index);
+                
+                if(index >1){
+                    $(this).css('background-color',color);
+                }else{
+                    color = $(this).css('background-color');
+                }
+            })
+            
+            
+
+
+            // 복사
+//            $("fieldset").last().children().siblings("div").click(function() {
+//                $(this).css("background-color", color);
+//            });
+
+            // 초기화
+            $("#btn1").click(function() {
+                color = "transparent";
+                $("fieldset").last().children().siblings("div").css("background-color", color);
+                
+                
+                // 쌤꺼
+//                $('div').each(function(index,item){
+//                    if(index>1){
+//                        $(item).css('background-color',color);
+//                    }
+//                });
+                
+             
+            });
+
+        });
+    </script>
+
+
+
+
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        .ancestors *, .descendants *, .siblings *{
+            display: block;
+            border: 2px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3 class="hh"> Header-0 </h3>
+    <h3 class="hh"> Header-1 </h3>
+    <h3 class="hh" name="test"> Header-2 </h3>
+    <h3 class="hh"> Header-3 </h3>
+    
+    <script>
+        $(function(){
+            var select = $(".hh");
+            select.first().css("background","yellow");
+            select.last().css("background","blue");
+            select.eq(1).css('color','red');
+            select.filter("[name=test]").css('color','blue');
+            select.not("[name=test]").css('text-decoration','underline');
+        })
+    </script>
+    
+        
+    
+    <br><hr><br>
+    
+    
+    <div class="ancestors">
+        <div style="width:500px">div(great-grandparent)
+            <ul>ul(grandparent)
+                <li>li(direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div style="width: 500px;">div(grandparent)
+            <p>p(direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    
+    
+    <script>
+        $(function(){
+//            $("span").parent().css("border","2px solid red");
+            
+//            $("span").parents().css("border","2px solid red");
+            
+//            $("span").parents("ul").css("border","2px solid red");
+            
+//            $("span").parentsUntil("div").css("border","2px solid red");
+            
+        });
+    </script>
+    
+    
+    
+    
+    
+    <div class="descendants" style="width: 500px;">div(current element)
+        <p class="child1">p (child)
+            <span class="child1">span (grandchild)</span>
+        </p>
+        <p class="child2">p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+    
+    <script>
+//        $(".descendants").children().css("border", "2px solid red");
+        
+//        $(".descendants").children(".child1").css("border", "2px solid red");
+//        $(".descendants").children(".child1").children().css("border", "2px solid red");
+        $(".descendants").find("span").css("border", "2px solid red");
+    </script>
+    
+    
+    
+    <br><hr><br>
+    
+    <div class="siblings">
+        <div>div (parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+            <p>p</p>
+        </div>
+    </div>
+    
+    
+    <script>
+        /* next */
+//        $(".siblings h2").siblings().css("border", "2px solid red");      // h2제외 전부
+//        $(".siblings h2").siblings("p").css("border", "2px solid red");   // p태그 두개
+//        $(".siblings h2").next().css("border", "2px solid red");            // h3만
+//        $(".siblings h2").nextAll().css("border", "2px solid red");         // h3부터 마지막p까지
+//        $(".siblings h2").nextUntil("h6").css("border", "2px solid red");   // h3부터 h5까지
+    </script>
+    
+    
+    
+    <script>
+        /* prev */
+//        $(".siblings h2").prev().css("border", "2px solid red");            // span만
+//        $(".siblings h2").prevAll().css("border", "2px solid red");         // p랑 span
+//        $(".siblings h2").prevUntil('p').css("border", "2px solid red");    // span만
+    </script>
+    
+    
+    
+    
+    
+    <div class="isTest">
+        <h3 class="select">Test1</h3>
+        <h3>Test2</h3>
+        <h3>Test3</h3>
+        <h3 class="select">Test4</h3>
+    </div>
+    
+    <script>
+        $(function(){
+           $(".isTest>h3").each(function(){
+               if($(this).is(".select")){
+                   $(this).css("color","red");
+               }
+           });
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <!-- 문제1 -->
+    
+    <style>
+        .input{
+            display: block;
+            width: 70%;
+        }
+        .outputfield{
+            border: 1px solid red;
+            height: 150px;
+        }
+    </style>
+    
+    <script>
+        function exam1(){
+            var input = document.getElementById("input1");
+            var output = document.getElementById("fieldset1");
+            output.innerHTML = "보기의 문자열의 길이는 " + input.value.length + "글자 입니다.";
+        }
+    </script>
+    
+    <div>
+        <p>문제1. 다음 보기에 있는 텍스트 필드에 작성한 문자열의 길이를 알아올 수 있도록 구현하시오</p>
+        <fieldset>
+            <legend>보기</legend>
+            <input type="text" class="input" id="input1" placeholder="글자를 작성해보세요">
+        </fieldset>
+        <br>
+        <fieldset class="outputfield" id="fieldset1">
+        </fieldset>
+        <button type="button" onclick="exam1();">확인하기</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <br><br><hr><br><br>
+        <!-- 문제2 -->
+    <script>
+        
+        function exam2(){
+            var input = document.getElementById("p2");
+            var str = input.innerHTML;
+            var output = document.getElementById("filedset2");
+            output.innerHTML = "";
+            
+            var data = str.split(",");
+            
+            for(var i=0; i<data.length; i++){
+                output.innerHTML += ((i+1) + ". " + data[i]+"<br>");
+            }
+        }
+        
+    </script>
+    
+    <div>
+        <p>문제2. 다음 보기에 있는 문자열을 ,(콤마)를 기준으로 잘라내어 하나하나 출력하시오</p>
+        <fieldset>
+            <legend>보기</legend>
+            <p id="p2">콜라,사이다,햄버거,피자,한약</p>
+        </fieldset>
+        <br>
+        <fieldset class="outputfield" id="filedset2">
+        </fieldset>
+        <button type="button" onclick="exam2();">확인하기</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    <br><br><hr><br><br>
+        <!-- 문제3 -->
+    <script>
+        function exam3_1(){
+            var input = document.getElementById("input3");
+            output = document.getElementById("fieldset3");
+            output.innerHTML = input.value;
+            input.value = "";
+        }
+        function exam3_2(){
+            output.innerHTML = output.innerHTML.toUpperCase();
+        }
+        function exam3_3(){
+            output.innerHTML = output.innerHTML.toLowerCase();
+        }
+    </script>
+    
+    <div>
+        <p>문제3.<br>글자를 입력 후 입력 버튼을 클릭하면<br>메시지공간에 출력하고 대문자버튼,소문자버튼을<br>클릭하면 해당 입력값을 대/소문자로 바꾸어 주어라<br>(입력 버튼을 클릭하면 입력창 값을 가져오고 입력창에 내용은 비워라!)</p>
+        <fieldset>
+            <legend>입력창</legend>
+            <input type="text" class="input" id="input3">
+        </fieldset>
+        <br>
+        <fieldset id="fieldset3" class="outputfield">
+            
+        </fieldset>
+        <button type="button" onclick="exam3_1();">입력</button>
+        <button type="button" onclick="exam3_2();">대문자로 변경</button>
+        <button type="button" onclick="exam3_3();">소문자로 변경</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>

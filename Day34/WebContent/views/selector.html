@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <style>
+        /*
+        *{
+            color : aqua;
+        }
+        */
+        /*
+        p, h3{
+            color : dodgerblue;
+        }
+*/
+
+        #p1 {
+            background: aqua;
+        }
+
+        .kh {
+            background-color: aquamarine;
+        }
+
+        .test {
+            color: white;
+        }
+
+        h5[class=kh] {
+            color: red;
+        }
+
+        p[id=p1] {
+            color: blue;
+        }
+    </style>
+
+    <h1 class="kh"> Test1 </h1>
+    <h3> Test2 </h3>
+    <h5 class="kh"> Test3 </h5>
+    <h5> Test3 Copy </h5>
+    <p id="p1"> Test4 </p>
+    <p class="kh"> Test5 </p>
+    <hr>
+
+    <style>
+        div>h1 {
+            color: red;
+        }
+
+        div li {
+            background-color: pink;
+        }
+
+        div>ul>li {
+            color: aqua;
+        }
+    </style>
+
+    <div>
+        <h1>테스트1</h1>
+        <h2>테스트2</h2>
+        <ul>
+            <li>테스트3</li>
+            <li>테스트4</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <style>
+        .div-test>h4+h5 {
+            color: red;
+        }
+
+        .div-test>h4~p {
+            background: pink;
+        }
+    </style>
+
+    <div class="div-test">
+        <h4>자손1</h4>
+        <h5>자손2</h5>
+        <p>자손3</p>
+        <p>자손4</p>
+        <p>자손5</p>
+    </div>
+
+    <hr>
+
+    <style>
+        #active-test,
+        #hover-test {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #active-test:active {
+            background: yellow;
+        }
+
+        #hover-test:hover {
+            background-color: blue;
+        }
+    </style>
+
+    <div id="active-test"></div>
+    <br>
+    <div id="hover-test"></div>
+
+    <hr>
+
+    <style>
+        input:focus {
+            background-color: aqua;
+        }
+
+        input:checked {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+
+    <fieldset>
+        <legned>회원 정보 입력</legned>
+        이름 : <input type="text"> <br>
+        나이 : <input type="number"> <br>
+        성별 :
+        남자 <input type="radio" name="gender">
+        여자 <input type="radio" name="gender">
+        <br>
+        취미 :
+        게임<input type="checkbox">
+        운동<input type="checkbox">
+        기타<input type="checkbox">
+    </fieldset>
+
+    <style>
+        option:enabled {
+            color: blue;
+        }
+
+        option:disabled {
+            background: red;
+        }
+    </style>
+
+    <fieldset>
+        <legend>회원 가입(19세 이하 가입 불가)</legend>
+        id : <input type="text"><br>
+        pw : <input type="password"><br>
+        이름 : <input type="text"><br>
+        나이 :
+        <select>
+            <option value="10" disabled>10</option>
+            <option value="10">20</option>
+            <option value="10">30</option>
+            <option value="10">40</option>
+            <option value="10">50</option>
+            <option value="10">60대 이상</option>
+        </select>
+    </fieldset>
+
+
+    <style>
+        #div-test1 p:first-child {
+            color: red;
+        }
+
+        #div-test1 p:last-child {
+            color: pink;
+        }
+
+        #div-test1 p:nth-child(2) {
+            color: blue;
+        }
+
+        #div-test1 p:nth-last-child(2) {
+            color: aquamarine;
+        }
+    </style>
+
+    <div id="div-test1">
+        <p>테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+        <p>테스트5</p>
+    </div>
+
+
+    <hr>
+    
+    <style>
+        #div-test2 p:first-of-type{
+            color:blue;
+        }
+        #div-test2 h4:first-of-type{
+            color:red;
+        }
+        #div-test2 p:last-of-type{
+            color:aqua;
+        }
+        #div-test2 h4:last-of-type{
+            color:green;
+        }
+    </style>
+
+    <div id="div-test2">
+        <p>테스트1 입니다.</p>
+        <h4>테스트1 입니다.</h4>
+        <p>테스트2 입니다.</p>
+        <h4>테스트2 입니다.</h4>
+        <p>테스트3 입니다.</p>
+        <h4>테스트3 입니다.</h4>
+        <p>테스트4 입니다.</p>
+        <h4>테스트4 입니다.</h4>
+        <p>테스트5 입니다.</p>
+        <h4>테스트5 입니다.</h4>
+    </div>
+
+    
+    
+    <style>
+        :link{
+            color:red;
+        }
+        :visited{
+            color:green;
+        }
+    </style>
+    
+    <style>
+        #letter-test::first-letter{
+            font-size:2em;
+        }
+        #letter-test::first-line{
+            background: yellow;
+        }
+        #letter-test::selection{
+            color:red;
+        }
+    </style>
+    <a href="http://www.naver.com" id="naver">네이버</a>
+    <p id="letter-test">테스트 입니다<br>잘나올까요?</p>
+
+    
+    <style>
+        p:not(#not_test1){
+            color:red;
+        }
+    </style>
+    <p id="not_test1">테스트1</p>
+    <p id="not_test2">테스트1</p>
+    <p id="not_test3">테스트1</p>
+    <p id="not_test4">테스트1</p>
+    <p id="not_test5">테스트1</p>
+
+
+
+
+
+
+</body></html>

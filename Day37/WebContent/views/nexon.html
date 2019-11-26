@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>넥슨</title>
+    
+    <style>
+/*         전체 */
+        #all{
+            
+        }
+        #all>div{
+     
+        }
+        
+        #header div{
+       
+        }
+        #mainAD div{
+            
+        }
+        #contents div{
+            background-color: rgba(240,248,255,0.5);
+        }
+        #allGame div{
+            
+        }
+        
+        
+        #all{
+            width: 1804px;
+            margin: 0 auto;
+        }
+        #header{
+            height: 70px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 70px;
+        }
+        #mainAD{
+            height: 500px;
+            position: relative;
+            background-image: url(img/mainAD1.png);
+        }
+        #contents{
+            width: 1500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        #allGame{
+            height: 1000px;
+        }
+    </style>
+    
+    <style>
+/*        header*/
+        #menu{
+            width: 100px;
+            height: 100%;
+            float:left;
+        }
+        #hBlank1{
+            width: 700px;
+            height:100%;
+            float :left;
+        }
+        #logo{
+            width: 200px;
+            height: 100%;
+            float:left;
+            background-image: url(img/logo.png);
+            background-repeat: no-repeat;
+        }
+        #hBlank2{
+            width: 450px;
+            height:100%;
+            float :left;
+        }
+        #pcRoom{
+            width: 150px;
+            height:100%;
+            float :left;
+        }
+        #signUp{
+            width: 100px;
+            height:100%;
+            float :left;
+        }
+        #logIn{
+            width: 100px;
+            height:100%;
+            float :left;
+        }
+        #logInbt1{
+            width: 90px;
+            height: 50px;
+            border-radius: 100px;
+            border: 2px solid black;
+            background-color: white;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+    </style>
+    
+    <style>
+/*        메인AD*/
+        #textAD{
+            width: 1500px;
+            height: 100px;
+            position: absolute;
+            top: 400px;
+            left: 150px;
+        }
+        #textAD>ul{
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        #textAD>ul>li{
+            width: 19.93%;
+            height: 100%;
+            list-style-type: none;
+            float:left;
+            text-align: center;
+            
+            margin-right: 1px;
+            background-color:rgba(240,248,255,0.4);
+            
+            font-weight: bolder;
+            font-size: 18px;
+            color: rgba(240,248,255,0.9);
+        }
+        
+        
+        #textAD>ul>li:hover{
+            animation-name: trans1;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes trans1{
+            from{
+                background-color:rgba(240,248,255,0.4);
+                color: rgba(240,248,255,0.9);
+            }
+            to{
+                background-color:rgba(240,248,255,0.7);
+                color: rgba(240,248,255,1.0);
+            }
+        }
+        
+    </style>
+    
+    <style>
+/*        content*/
+        #content3{
+            width: 100%;
+            height: 30%;
+        }
+        #content3_1{
+            float: left;
+            height: 100%;
+            width: 50%;
+        }
+        #content3_2{
+            float: left;
+            height: 100%;
+            width: 50%;
+        }
+        
+        #contentH1{
+            margin-top: 100px;
+        }
+        #contentH2{
+            margin-top: 100px;
+            text-align: right;
+        }
+        
+        
+        #content1{
+            float: left;
+            width: 60%;
+            height: 70%;    
+            margin-bottom: 70px;
+        }
+        #content1>ul{
+            width: 100%;
+            height: 100%;
+
+            
+            padding: 0px;
+            margin: 0px;
+            
+            list-style-type: none;
+        }
+        #content1>ul>li{
+     
+            height: 100%;
+            width: 155px;
+            
+            margin-left: 15px;
+            float:left;
+        }
+        
+        #content1>ul>li:hover{
+            animation-name: trans2;
+            animation-duration: 0.5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes trans2{
+            from{
+                width: 155px;
+                height: 100%;
+            }
+            to{
+                width: 170px;
+                height: 110%;
+            }
+        }
+        
+        #imgContent1{
+            background-image: url(img/imgContent1.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #imgContent2{
+            background-image: url(img/imgContent2.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #imgContent3{
+            background-image: url(img/imgContent3.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #imgContent4{
+            background-image: url(img/imgContent4.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #imgContent5{
+            background-image: url(img/imgContent5.PNG);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+       
+        
+        
+        #content2{
+            float: left;
+            width: 40%;
+            height: 70%;
+        }
+        #content2_1{
+            height: 20%;
+            width: 60%;
+            margin-left: 119px;
+            margin-top : 75px;
+        }
+        #content2_2{
+            height: 20%;
+            width: 30%;
+            float: left;
+            margin-left: 119px;
+            margin-right: 3px;
+        }
+        #content2_3{
+            height: 20%;
+            width: 30%;
+            float: left;
+        }
+        #content2_4{
+            height: 15%;
+            width: 60%;
+            clear :left;
+            margin: 0 auto;
+        }
+        #content2_5{
+            height: 10%;
+            width: 60%;
+            margin: 0 auto;
+        }
+        
+        #cbt1{
+            background-color: black;
+            color: aliceblue;
+            width: 100%;
+            height: 93%;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 1px;
+        }
+        #cbt2{
+            background-color: #4a4e57;
+            color: aliceblue;
+            width: 99%;
+            height: 93%;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 1px;
+        }
+        #cbt3{
+            background-color:#4a4e57;
+            color: aliceblue;
+            width: 99%;
+            height: 93%;
+            font-size: 16px;
+            font-weight: bolder;
+            border: 1px;
+        }
+    </style>
+    
+    
+    
+    
+    <style>
+/*        이미지*/
+/*        헤더*/
+        #imgMenu{
+            width: 30%;
+            height: 33%;   
+        }
+        
+        
+    </style>
+    
+
+    
+</head>
+<body>
+    <div id="all">
+        <div id="header">
+            <div id="menu">
+                <img src="img/menu.png" id="imgMenu">
+                <span>메뉴</span>
+            </div>
+            <div id="hBlank1"></div>
+            <div id="logo">
+            </div>
+            <div id="hBlank2"></div>
+            <div id="pcRoom">PC방 OFF
+            </div>
+            <div id="signUp">회원가입
+            </div>
+            <div id="logIn">
+                <button type="button" id="logInbt1">로그인</button>
+            </div>
+        </div>
+        <div id="mainAD">
+            <div id="textAD">
+                <ul>
+                    <li><p>천애명월도</p><p>천애 추석이벤트</p></li>
+                    <li><p>카이저</p><p>신규서버 오픈</p></li>
+                    <li><p>사이퍼즈</p><p>66번째 캐릭터, 악몽의 티샤</p></li>
+                    <li><p>클로저스</p><p>부산 챕터2 : 불신의 새벽</p></li>
+                    <li><p>메이플스토리M</p><p>메이플스토리M 데몬어벤져</p></li>
+                </ul>
+            </div>
+        </div>
+        <div id="contents">
+            <div id="content3">
+                <div id="content3_1">
+                    <h2 id="contentH1">추천게임</h2>
+                </div>
+                <div id="content3_2">
+                    <h4 id="contentH2">고객센터</h4>
+                </div>
+                
+            </div>
+            <div id="content1">
+                <ul id="recommend1">
+                    <li id="imgContent1"></li>
+                    <li id="imgContent2"></li>
+                    <li id="imgContent3"></li>
+                    <li id="imgContent4"></li>
+                    <li id="imgContent5"></li>
+                </ul>
+            </div>
+            <div id="content2">
+                <div id="content2_1">
+                    <button type="button" id="cbt1">NEXON ID 로그인</button>
+                </div>
+                <div id="content2_2">
+                    <button type="button" id="cbt2">일회용 로그인</button>
+                </div>
+                <div id="content2_3">
+                    <button type="button" id="cbt3">QR 로그인</button>
+                </div>
+                <div id="content2_4">
+                    <p>다른 계정 간편 로그인 </p>
+                </div>
+                <div id="content2_5">
+                </div>
+            </div>
+        </div>
+        <div id="allGame">
+        </div>
+    </div>
+</body>
+</html>
